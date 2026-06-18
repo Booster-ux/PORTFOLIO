@@ -4,54 +4,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Systems Development | GameOnAI</title>
+    <title>Systems Development | GameOnAI</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../services.css">
 </head>
 
-<body style="opacity:0; transition: opacity 0.5s ease;">
-    <a href="../index.html" class="nav-link glass back-btn">← Back to Studio</a>
-
-    <header class="service-hero">
-        <div class="service-hero-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=1500');">
+<body>
+    <nav id="main-nav" class="scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">GAMEON<span class="gradient-text">AI</span></a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../index.html#services" class="nav-link active">Services</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
         </div>
-        <div class="container service-hero-content">
-            <h1 class="reveal" style="font-size: 4rem;">Game Systems <span class="gradient-text">Development</span></h1>
-            <p class="reveal" style="max-width: 600px; color: var(--text-dim);">High-performance backend logic and
+    </nav>
+
+    <header class="service-detail-hero"
+        style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1500');">
+        <div class="nav-container" style="position: relative; z-index: 10;">
+            <span class="hero-tag">Technical Architecture</span>
+            <h1 class="gradient-text" style="font-size: 5rem;">SYSTEMS <br>ARCHITECTURE</h1>
+            <p style="max-width: 600px; color: var(--text-dim); margin-top: 20px;">High-performance backend logic and
                 complex gameplay systems built for scale and stability.</p>
         </div>
     </header>
 
-    <main class="container">
-        <section id="portfolio-showcase">
-            <h2 class="reveal">TECHNICAL <span class="gradient-text">SHOWCASE</span></h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item glass reveal">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000"
-                        alt="Systems 1">
-                    <div class="portfolio-overlay"><span>VIEW SYSTEM</span></div>
+    <main class="nav-container">
+        <!-- Systems Showcase -->
+        <section class="service-section">
+            <div class="section-head">
+                <span class="section-tag">CAPABILITIES</span>
+                <h2>CORE <span class="gradient-text">SYSTEMS</span></h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                <div class="glass reveal"
+                    style="padding: 30px; border-radius: 20px; border-left: 4px solid var(--cyan);">
+                    <h3 style="color: #fff; margin-bottom: 10px;">Inventory Systems</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Complex item management with weight, rarity,
+                        and custom attributes.</p>
+                </div>
+                <div class="glass reveal"
+                    style="padding: 30px; border-radius: 20px; border-left: 4px solid var(--purple);">
+                    <h3 style="color: #fff; margin-bottom: 10px;">Combat Logic</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Hit detection, skill cooldowns, and
+                        server-side validation.</p>
+                </div>
+                <div class="glass reveal"
+                    style="padding: 30px; border-radius: 20px; border-left: 4px solid var(--electric-blue);">
+                    <h3 style="color: #fff; margin-bottom: 10px;">Quest Engines</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Dynamic mission systems with branching paths
+                        and reward scaling.</p>
+                </div>
+                <div class="glass reveal"
+                    style="padding: 30px; border-radius: 20px; border-left: 4px solid var(--cyan);">
+                    <h3 style="color: #fff; margin-bottom: 10px;">Matchmaking</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Advanced queue systems for competitive and
+                        casual gameplay.</p>
+                </div>
+                <div class="glass reveal"
+                    style="padding: 30px; border-radius: 20px; border-left: 4px solid var(--purple);">
+                    <h3 style="color: #fff; margin-bottom: 10px;">Data Storage</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Secure, optimized player data saving with
+                        ProfileService/DataStore2.</p>
+                </div>
+                <div class="glass reveal"
+                    style="padding: 30px; border-radius: 20px; border-left: 4px solid var(--electric-blue);">
+                    <h3 style="color: #fff; margin-bottom: 10px;">Monetization</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Storefronts, trading systems, and premium
+                        gamepass integration.</p>
                 </div>
             </div>
         </section>
 
-        <section id="process">
-            <h2 class="reveal">OUR <span class="gradient-text">PROCESS</span></h2>
-            <div class="process-list" style="margin-top: 40px;">
-                <div class="process-step reveal">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>Requirement Analysis</h3>
-                        <p>We analyze the data flow and performance bottlenecks of your proposed system.</p>
-                    </div>
-                </div>
-                <div class="process-step reveal">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3>Architectural Design</h3>
-                        <p>Designing modular and extensible codebases using industry best practices.</p>
-                    </div>
-                </div>
+        <!-- Technical Flow -->
+        <section class="service-section">
+            <div class="section-head">
+                <span class="section-tag">LOGIC FLOW</span>
+                <h2>SYSTEM <span class="gradient-text">ARCHITECTURE</span></h2>
+            </div>
+            <div class="glass reveal" style="padding: 60px; border-radius: 30px; text-align: center;">
+                <div style="font-style: italic; color: var(--text-dim);">Animated System Diagrams Coming Soon</div>
             </div>
         </section>
     </main>
@@ -64,12 +98,10 @@
         const lenis = new Lenis();
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '1';
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach((el) => {
-                gsap.fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%' } });
-            });
+
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => {
+            gsap.from(el, { opacity: 0, y: 40, duration: 1.2, scrollTrigger: { trigger: el, start: 'top 90%' } });
         });
     </script>
 </body>

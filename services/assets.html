@@ -6,45 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Assets | GameOnAI</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../services.css">
 </head>
 
-<body style="opacity:0; transition: opacity 0.5s ease;">
-    <a href="../index.html" class="nav-link glass back-btn">← Back to Studio</a>
-
-    <header class="service-hero">
-        <div class="service-hero-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1500');">
+<body>
+    <nav id="main-nav" class="scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">GAMEON<span class="gradient-text">AI</span></a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../index.html#services" class="nav-link active">Services</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
         </div>
-        <div class="container service-hero-content">
-            <h1 class="reveal" style="font-size: 4rem;">Game <span class="gradient-text">Assets</span></h1>
-            <p class="reveal" style="max-width: 600px; color: var(--text-dim);">Custom 3D models and props optimized for
-                the Roblox engine.</p>
+    </nav>
+
+    <header class="service-detail-hero" style="background-image: url('../assets/map_showcase.png');">
+        <div class="nav-container" style="position: relative; z-index: 10;">
+            <span class="hero-tag">Asset Library</span>
+            <h1 class="gradient-text" style="font-size: 5rem;">GAME <br>ASSETS</h1>
+            <p style="max-width: 600px; color: var(--text-dim); margin-top: 20px;">High-quality, optimized 3D models and
+                props built for performance and visual fidelity in Roblox.</p>
         </div>
     </header>
 
-    <main class="container">
-        <section id="portfolio-showcase">
-            <h2 class="reveal">ASSET <span class="gradient-text">LIBRARY</span></h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item glass reveal">
-                    <img src="https://images.unsplash.com/photo-1616440802342-e1d029f956aa?auto=format&fit=crop&q=80&w=1000"
-                        alt="Assets 1">
-                    <div class="portfolio-overlay"><span>VIEW ASSET</span></div>
+    <main class="nav-container">
+        <!-- Asset Categories -->
+        <section class="service-section">
+            <div class="section-head">
+                <span class="section-tag">CATALOG</span>
+                <h2>ASSET <span class="gradient-text">CATEGORIES</span></h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
+                <div class="glass reveal" style="padding: 25px; border-radius: 20px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 10px;">⚔️</div>
+                    <h3 style="font-size: 1rem;">Weapons</h3>
+                </div>
+                <div class="glass reveal" style="padding: 25px; border-radius: 20px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 10px;">👤</div>
+                    <h3 style="font-size: 1rem;">Characters</h3>
+                </div>
+                <div class="glass reveal" style="padding: 25px; border-radius: 20px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 10px;">🏎️</div>
+                    <h3 style="font-size: 1rem;">Vehicles</h3>
+                </div>
+                <div class="glass reveal" style="padding: 25px; border-radius: 20px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 10px;">📦</div>
+                    <h3 style="font-size: 1rem;">Props</h3>
+                </div>
+                <div class="glass reveal" style="padding: 25px; border-radius: 20px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 10px;">🏢</div>
+                    <h3 style="font-size: 1rem;">Buildings</h3>
                 </div>
             </div>
         </section>
 
-        <section id="process">
-            <h2 class="reveal">OUR <span class="gradient-text">PROCESS</span></h2>
-            <div class="process-list" style="margin-top: 40px;">
-                <div class="process-step reveal">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>Modeling & Texturing</h3>
-                        <p>High-quality assets built with optimized topology for performance.</p>
-                    </div>
-                </div>
+        <!-- Showcase -->
+        <section class="service-section">
+            <div class="section-head">
+                <span class="section-tag">SHOWCASE</span>
+                <h2>RECENT <span class="gradient-text">MODELS</span></h2>
+            </div>
+            <div class="portfolio-masonry">
+                <div class="masonry-item reveal"><img
+                        src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1000"
+                        alt="Asset 1"></div>
             </div>
         </section>
     </main>
@@ -57,12 +83,10 @@
         const lenis = new Lenis();
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '1';
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach((el) => {
-                gsap.fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%' } });
-            });
+
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => {
+            gsap.from(el, { opacity: 0, y: 40, duration: 1.2, scrollTrigger: { trigger: el, start: 'top 90%' } });
         });
     </script>
 </body>

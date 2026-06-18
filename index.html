@@ -4,175 +4,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameOnAI | Premium Roblox Development Studio</title>
+    <title>GameOnAI | AAA Roblox Development Studio</title>
     <meta name="description"
-        content="Cinematic portfolio for GameOnAI, a high-end Roblox studio specializing in full game production, systems, and design.">
+        content="Premium Roblox Development Studio specialized in cinematic games, complex systems, and AAA environments.">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+    <div class="page-load-cover" id="page-loader">
+        <h2 class="gradient-text" style="font-size: 2rem;">GAMEONAI STUDIO</h2>
+    </div>
+
+    <canvas id="particles-canvas"></canvas>
+
     <nav id="main-nav">
-        <div class="container nav-inner">
+        <div class="nav-container">
             <a href="#" class="logo">GAMEON<span class="gradient-text">AI</span></a>
-            <div class="nav-links">
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Showcase</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="#contact" class="hero-tag" style="margin-bottom: 0; padding: 10px 25px; cursor: pointer;">Work with
+                us</a>
         </div>
     </nav>
 
     <main id="app">
         <!-- Hero Section -->
         <section id="hero">
-            <div class="hero-background"></div>
-            <div class="container">
+            <div class="hero-character-box">
+                <img src="./assets/hero_aaa.png" alt="Roblox Hero" class="hero-character-img" id="hero-img">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="nav-container"> <!-- Using nav-container for same padding -->
                 <div class="hero-content">
-                    <h1 class="hero-title" id="hero-title">CREATING THE <br><span class="gradient-text">FUTURE OF
-                            ROBLOX</span></h1>
-                    <p class="hero-subtitle" id="hero-subtitle">Premium full-production studio delivering AAA-quality
-                        cinematic experiences and advanced game systems.</p>
-                    <div class="cta-wrap" id="hero-cta" style="opacity:0; transform:translateY(20px);">
-                        <a href="#services" class="nav-link glass"
-                            style="padding: 15px 35px; border-radius: 50px; display: inline-block;">Explore Studio</a>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-character-wrap" id="hero-character">
-                <img src="./assets/hero_character.png" alt="GameOnAI Hero" class="hero-character">
-            </div>
-        </section>
-
-        <!-- Intro Section -->
-        <section id="intro">
-            <div class="container">
-                <div class="reveal">
-                    <h2 style="font-size: 3rem; margin-bottom: 30px;">LIMITLESS <span
-                            class="gradient-text">POSSIBILITIES</span></h2>
-                    <p style="font-size: 1.4rem; max-width: 800px; color: var(--text-dim);">
-                        GameOnAI is a full-cycle Roblox development studio. From immersive environment design to complex
-                        system architecture, we build high-performance games that push the boundaries of the platform.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Grid -->
-        <section id="services">
-            <div class="container">
-                <div class="reveal">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">STUDIO <span
-                            class="gradient-text">SERVICES</span></h2>
-                </div>
-
-                <div class="services-grid">
-                    <!-- Service Cards -->
-                    <div class="service-card glass reveal" data-service="game-dev">
-                        <div class="glow-border"></div>
-                        <div class="service-card-content">
-                            <div class="service-icon"></div>
-                            <h3>Full Game Development</h3>
-                            <p>End-to-end production including concept, design, coding, and launch.</p>
-                        </div>
-                    </div>
-
-                    <div class="service-card glass reveal" data-service="systems">
-                        <div class="glow-border"></div>
-                        <div class="service-card-content">
-                            <div class="service-icon"
-                                style="background: var(--purple); box-shadow: 0 0 20px rgba(188, 19, 254, 0.4);"></div>
-                            <h3>Systems Development</h3>
-                            <p>Advanced backend logic, database integration, and high-performance mechanics.</p>
-                        </div>
-                    </div>
-
-                    <div class="service-card glass reveal" data-service="map-design">
-                        <div class="glow-border"></div>
-                        <div class="service-card-content">
-                            <div class="service-icon"
-                                style="background: var(--electric-blue); box-shadow: 0 0 20px rgba(41, 121, 255, 0.4);">
-                            </div>
-                            <h3>Map & Environment</h3>
-                            <p>Immersive world-building with cinematic lighting and custom assets.</p>
-                        </div>
-                    </div>
-
-                    <div class="service-card glass reveal" data-service="animation">
-                        <div class="glow-border"></div>
-                        <div class="service-card-content">
-                            <div class="service-icon"></div>
-                            <h3>Animation Studio</h3>
-                            <p>Custom R6/R15 animations for combat, interactions, and cutscenes.</p>
-                        </div>
-                    </div>
-
-                    <div class="service-card glass reveal" data-service="vfx">
-                        <div class="glow-border"></div>
-                        <div class="service-card-content">
-                            <div class="service-icon" style="border-radius: 50%;"></div>
-                            <h3>UI/UX + GFX + VFX</h3>
-                            <p>Modern interfaces and particle systems for a polished game feel.</p>
-                        </div>
-                    </div>
-
-                    <div class="service-card glass reveal" data-service="assets">
-                        <div class="glow-border"></div>
-                        <div class="service-card-content">
-                            <div class="service-icon" style="transform: rotate(45deg);"></div>
-                            <h3>Game Assets</h3>
-                            <p>Prop design, 3D modeling, and library of ready-to-use components.</p>
-                        </div>
+                    <span class="hero-tag" id="hero-tag">AAA Roblox Production Studio</span>
+                    <h1 class="hero-title" id="hero-title">NEXT-GEN <br><span class="gradient-text">ROBLOX
+                            EXPERIENCES</span></h1>
+                    <p class="hero-desc" id="hero-desc">We build high-fidelity games, advanced systems, and cinematic
+                        worlds that push the limits of Roblox.</p>
+                    <div id="hero-btns" style="display: flex; gap: 20px;">
+                        <a href="#services" class="nav-link active"
+                            style="padding: 18px 45px; background: var(--cyan); color: #000; border-radius: 12px; font-weight: 800; text-transform: uppercase;">View
+                            Services</a>
+                        <a href="#portfolio" class="nav-link glass"
+                            style="padding: 18px 45px; border-radius: 12px; font-weight: 700; text-transform: uppercase; border: 1px solid var(--glass-border);">Our
+                            Portfolio</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Showcase Section -->
-        <section id="portfolio">
-            <div class="container">
-                <div class="reveal">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 40px;">STUDIO <span
-                            class="gradient-text">SHOWCASE</span></h2>
+        <!-- Services Section -->
+        <section id="services" class="service-section">
+            <div class="section-head">
+                <span class="section-tag">PREMIUM SERVICES</span>
+                <h2 style="font-size: 4rem;">STUDIO <span class="gradient-text">CAPABILITIES</span></h2>
+            </div>
+
+            <div class="services-grid-upgrade">
+                <!-- Full Game Dev -->
+                <div class="card-upgrade reveal" data-service="game-dev">
+                    <div class="card-preview">
+                        <img src="./assets/game_scene.png" class="card-image" alt="Game Dev">
+                    </div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content-upgrade">
+                        <div class="card-icon-box">🎮</div>
+                        <h3 class="card-title-upgrade">Full Game<br>Development</h3>
+                        <p class="card-desc-upgrade">End-to-end AAA production from concept to global launch.</p>
+                    </div>
                 </div>
-                <div class="showcase-slider">
-                    <div class="showcase-slide glass">
-                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=1000"
-                            alt="Showcase 1">
+
+                <!-- Systems -->
+                <div class="card-upgrade reveal" data-service="systems">
+                    <div class="card-preview">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000"
+                            class="card-image" alt="Systems">
                     </div>
-                    <div class="showcase-slide glass">
-                        <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1000"
-                            alt="Showcase 2">
-                    </div>
-                    <div class="showcase-slide glass">
-                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1000"
-                            alt="Showcase 3">
+                    <div class="card-overlay"></div>
+                    <div class="card-content-upgrade">
+                        <div class="card-icon-box" style="border-color: var(--purple);">⚙️</div>
+                        <h3 class="card-title-upgrade">Systems<br>Architecture</h3>
+                        <p class="card-desc-upgrade">Advanced backend, data-saving, and high-performance gameplay
+                            systems.</p>
                     </div>
                 </div>
+
+                <!-- Animation -->
+                <div class="card-upgrade reveal" data-service="animation">
+                    <div class="card-preview">
+                        <img src="./assets/animation_showcase.png" class="card-image" alt="Animation">
+                    </div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content-upgrade">
+                        <div class="card-icon-box">⚔️</div>
+                        <h3 class="card-title-upgrade">Motion &<br>Animation</h3>
+                        <p class="card-desc-upgrade">Fluid character combat, cutscenes, and immersive VFX.</p>
+                    </div>
+                </div>
+
+                <!-- Map Design -->
+                <div class="card-upgrade reveal" data-service="map-design">
+                    <div class="card-preview">
+                        <img src="./assets/map_showcase.png" class="card-image" alt="Map">
+                    </div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content-upgrade">
+                        <div class="card-icon-box" style="border-color: var(--electric-blue);">🌍</div>
+                        <h3 class="card-title-upgrade">Map &<br>Environment</h3>
+                        <p class="card-desc-upgrade">Breathtaking worlds, cinematic lighting, and custom assets.</p>
+                    </div>
+                </div>
+
+                <!-- UI/GFX/VFX -->
+                <div class="card-upgrade reveal" data-service="vfx">
+                    <div class="card-preview">
+                        <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&q=80&w=1000"
+                            class="card-image" alt="GFX">
+                    </div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content-upgrade">
+                        <div class="card-icon-box">✨</div>
+                        <h3 class="card-title-upgrade">UI/UX +<br>GFX + VFX</h3>
+                        <p class="card-desc-upgrade">Immersive HUDs, branding, and particle effects.</p>
+                    </div>
+                </div>
+
+                <!-- Assets -->
+                <div class="card-upgrade reveal" data-service="assets">
+                    <div class="card-preview">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1000"
+                            class="card-image" alt="Assets">
+                    </div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content-upgrade">
+                        <div class="card-icon-box">📦</div>
+                        <h3 class="card-title-upgrade">Premium<br>Game Assets</h3>
+                        <p class="card-desc-upgrade">High-quality optimized models, weapons, and vehicles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Showcase -->
+        <section id="portfolio" class="service-section">
+            <div class="section-head">
+                <span class="section-tag">PROJECT SHOWCASE</span>
+                <h2 style="font-size: 4rem;">CINEMATIC <span class="gradient-text">GALLERY</span></h2>
+            </div>
+
+            <div class="portfolio-masonry">
+                <!-- Placeholders represent the Masonry + Lightbox system -->
+                <div class="masonry-item reveal"><img
+                        src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=600"
+                        alt="Work 1"></div>
+                <div class="masonry-item reveal"><img
+                        src="https://images.unsplash.com/photo-1614728263952-84ea206f99b6?auto=format&fit=crop&q=80&w=600"
+                        alt="Work 2"></div>
+                <div class="masonry-item reveal"><img
+                        src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600"
+                        alt="Work 3"></div>
+                <div class="masonry-item reveal"><img
+                        src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000"
+                        alt="Work 4"></div>
+                <div class="masonry-item reveal"><img
+                        src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80&w=600"
+                        alt="Work 5"></div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" style="min-height: auto; padding: 150px 0;">
-            <div class="container">
-                <div class="glass reveal" style="padding: 80px; text-align: center;">
-                    <h2 style="font-size: 3rem; margin-bottom: 20px;">READY TO <span class="gradient-text">BUILD?</span>
-                    </h2>
-                    <p style="margin-bottom: 40px; color: var(--text-dim);">Partner with GameOnAI for your next high-end
-                        Roblox production.</p>
-                    <div style="font-size: 1.5rem; font-weight: 600;">
-                        Discord: <span class="gradient-text">gameonai</span>
+        <section id="contact" class="service-section">
+            <div class="glass reveal"
+                style="padding: 100px; border-radius: 40px; text-align: center; background: radial-gradient(circle at center, rgba(0, 242, 255, 0.05), transparent);">
+                <h2 style="font-size: 4.5rem; margin-bottom: 30px;">READY TO <span class="gradient-text">BUILD YOUR
+                        FUTURE?</span></h2>
+                <p style="font-size: 1.5rem; color: var(--text-dim); max-width: 800px; margin: 0 auto 60px;">Transform
+                    your vision into a high-end Roblox experience. Our development team is ready for new partnerships.
+                </p>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
+                    <div class="glass" style="padding: 30px; border-radius: 20px;">
+                        <h4 style="color: var(--cyan); margin-bottom: 10px;">Discord</h4>
+                        <div style="font-size: 1.4rem; font-weight: 700;">gameonai</div>
                     </div>
+                    <div class="glass" style="padding: 30px; border-radius: 20px;">
+                        <h4 style="color: var(--cyan); margin-bottom: 10px;">GitHub</h4>
+                        <div style="font-size: 1.4rem; font-weight: 700;">GameOnAI-Roblox</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 80px;">
+                    <a href="mailto:contact@gameon.ai" class="nav-link active"
+                        style="padding: 20px 60px; border-radius: 12px; font-size: 1.2rem;">Email Inquiry</a>
                 </div>
             </div>
         </section>
 
-        <footer style="padding: 40px 0; border-top: 1px solid var(--glass-border); text-align: center;">
-            <div class="container">
-                <p style="color: var(--text-dim); font-size: 0.8rem;">&copy; 2026 GAMEONAI STUDIO. ALL RIGHTS RESERVED.
-                </p>
-            </div>
+        <footer style="padding: 60px 0; border-top: 1px solid var(--glass-border); text-align: center;">
+            <p style="color: var(--text-dim);">&copy; 2026 GAMEONAI STUDIO. POWERED BY CINEMATIC DESIGN.</p>
         </footer>
     </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <div class="lightbox-content" style="max-width: 90%; max-height: 90%;">
+            <img src="" id="lightbox-img" style="width: 100%; border-radius: 10px;">
+            <video src="" id="lightbox-vid" controls style="width: 100%; display: none;"></video>
+        </div>
+    </div>
 
     <script type="module" src="./main.js"></script>
 </body>

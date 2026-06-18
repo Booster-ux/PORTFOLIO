@@ -6,45 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI/UX + GFX + VFX | GameOnAI</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../services.css">
 </head>
 
-<body style="opacity:0; transition: opacity 0.5s ease;">
-    <a href="../index.html" class="nav-link glass back-btn">← Back to Studio</a>
-
-    <header class="service-hero">
-        <div class="service-hero-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1500');">
+<body>
+    <nav id="main-nav" class="scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">GAMEON<span class="gradient-text">AI</span></a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../index.html#services" class="nav-link active">Services</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
         </div>
-        <div class="container service-hero-content">
-            <h1 class="reveal" style="font-size: 4rem;">UI / UX / <span class="gradient-text">VFX</span></h1>
-            <p class="reveal" style="max-width: 600px; color: var(--text-dim);">Polishing the player experience with
-                modern interfaces and stunning visual effects.</p>
+    </nav>
+
+    <header class="service-detail-hero"
+        style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1500');">
+        <div class="nav-container" style="position: relative; z-index: 10;">
+            <span class="hero-tag">Visual Identity</span>
+            <h1 class="gradient-text" style="font-size: 5rem;">UI / UX / <br>VFX & GFX</h1>
+            <p style="max-width: 600px; color: var(--text-dim); margin-top: 20px;">Polishing the player experience with
+                modern interfaces, stunning visuals, and breathtaking effects.</p>
         </div>
     </header>
 
-    <main class="container">
-        <section id="portfolio-showcase">
-            <h2 class="reveal">DESIGN <span class="gradient-text">GALLERY</span></h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item glass reveal">
-                    <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&q=80&w=1000"
-                        alt="UI 1">
-                    <div class="portfolio-overlay"><span>VIEW DESIGN</span></div>
+    <main class="nav-container">
+        <!-- UI/UX -->
+        <section class="service-section">
+            <div class="section-head">
+                <span class="section-tag">01. INTERFACE</span>
+                <h2>UI / <span class="gradient-text">UX DESIGN</span></h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                <div class="glass reveal" style="padding: 30px; border-radius: 20px;">
+                    <h3 style="color: var(--cyan); margin-bottom: 10px;">HUDs</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Immersive in-game displays that don't break
+                        concentration.</p>
+                </div>
+                <div class="glass reveal" style="padding: 30px; border-radius: 20px;">
+                    <h3 style="color: var(--cyan); margin-bottom: 10px;">Menus</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Clean, responsive, and intuitive navigation
+                        systems.</p>
+                </div>
+                <div class="glass reveal" style="padding: 30px; border-radius: 20px;">
+                    <h3 style="color: var(--cyan); margin-bottom: 10px;">Mobile UI</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Optimized touch controls and simplified
+                        layouts.</p>
                 </div>
             </div>
         </section>
 
-        <section id="process">
-            <h2 class="reveal">OUR <span class="gradient-text">PROCESS</span></h2>
-            <div class="process-list" style="margin-top: 40px;">
-                <div class="process-step reveal">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>Interface Mockups</h3>
-                        <p>Designing intuitive and aesthetically pleasing user journeys.</p>
-                    </div>
-                </div>
+        <!-- GFX -->
+        <section class="service-section">
+            <div class="section-head">
+                <span class="section-tag">02. BRANDING</span>
+                <h2>STUDIO <span class="gradient-text">GFX</span></h2>
+            </div>
+            <div class="portfolio-masonry">
+                <div class="masonry-item reveal"><img
+                        src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&q=80&w=600"
+                        alt="GFX 1"></div>
+            </div>
+        </section>
+
+        <!-- VFX -->
+        <section class="service-section">
+            <div class="section-head">
+                <span class="section-tag">03. EFFECTS</span>
+                <h2>VISUAL <span class="gradient-text">VFX</span></h2>
+            </div>
+            <div class="glass reveal" style="padding: 60px; border-radius: 30px; text-align: center;">
+                <p style="color: var(--text-dim);">Dynamic Particle Systems & Magic Effects Showreels Coming Soon</p>
             </div>
         </section>
     </main>
@@ -57,12 +89,10 @@
         const lenis = new Lenis();
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '1';
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach((el) => {
-                gsap.fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%' } });
-            });
+
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => {
+            gsap.from(el, { opacity: 0, y: 40, duration: 1.2, scrollTrigger: { trigger: el, start: 'top 90%' } });
         });
     </script>
 </body>
