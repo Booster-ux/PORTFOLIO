@@ -126,10 +126,11 @@ lightbox.addEventListener('click', () => {
 // Service Card Navigation
 const serviceCards = document.querySelectorAll('.card-upgrade');
 serviceCards.forEach(card => {
-  card.addEventListener('click', () => {
+  card.addEventListener('click', (e) => {
     const service = card.dataset.service;
+    console.log('Service clicked:', service);
     gsap.to('main', {
-      opacity: 0, duration: 0.5, onComplete: () => {
+      opacity: 0, duration: 0.4, ease: 'power2.in', onComplete: () => {
         window.location.href = `./services/${service}.html`;
       }
     });
