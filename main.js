@@ -95,20 +95,38 @@ window.addEventListener('load', () => {
     }
   });
 
+  // Staggered Grid Reveal for Showcase
+  gsap.to('.grid-item', {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    stagger: {
+      each: 0.05,
+      grid: 'auto',
+      from: 'start'
+    },
+    ease: 'expo.out',
+    scrollTrigger: {
+      trigger: '#studio-grid',
+      start: 'top 85%',
+      toggleActions: 'play none none none'
+    }
+  });
+
   // Lightbox Logic Global
   const lightbox = document.getElementById('lightbox');
   const lightboxContent = document.getElementById('lightbox-content');
   const lightboxClose = document.getElementById('lightbox-close');
   const lightboxOverlay = document.querySelector('.lightbox-overlay');
-  const carouselItems = document.querySelectorAll('.carousel-item');
+  const gridItems = document.querySelectorAll('.grid-item');
 
-  carouselItems.forEach(item => {
+  gridItems.forEach(item => {
     item.addEventListener('click', () => {
       const imgTarget = item.querySelector('img');
       const src = imgTarget.src;
       const title = imgTarget.alt;
 
-      document.getElementById('modal-category').textContent = 'PORTFOLIO';
+      document.getElementById('modal-category').textContent = 'PROJECT SHOWCASE';
       document.getElementById('modal-title').textContent = title;
 
       lightboxContent.innerHTML = '';
@@ -130,35 +148,6 @@ window.addEventListener('load', () => {
   lightboxOverlay.addEventListener('click', closeLightbox);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
-  });
-
-  // Carousel Drag Interaction (Simple)
-  const track = document.querySelector('.carousel-track');
-  const container = document.querySelector('.carousel-container');
-  let isDragging = false;
-  let startX;
-  let scrollLeft;
-
-  container.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    container.style.cursor = 'grabbing';
-    startX = e.pageX - track.offsetLeft;
-    track.style.animationPlayState = 'paused';
-  });
-
-  window.addEventListener('mouseup', () => {
-    isDragging = false;
-    container.style.cursor = 'grab';
-    track.style.animationPlayState = 'running';
-  });
-
-  container.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - track.offsetLeft;
-    const walk = (x - startX) * 2;
-    // Note: Manual dragging in an infinite CSS animation loop is complex.
-    // For now, we allow the hover pause to work, which is the primary requirement.
   });
 
   // Unified Scroll Revelation Flow (remainders)
