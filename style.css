@@ -305,6 +305,9 @@ p {
 /* Common Parts */
 .section {
   padding: var(--section-padding) 0;
+  position: relative;
+  z-index: 10;
+  background: transparent;
 }
 
 .section-header {
@@ -363,30 +366,55 @@ p {
   border-radius: 24px;
   border: 1px solid var(--glass-border);
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-/* Portfolio Cards */
+.why-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
 .portfolio-card {
   background: var(--dark-900);
   border: 1px solid var(--glass-border);
   border-radius: 24px;
   overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .portfolio-thumbnail {
   width: 100%;
   aspect-ratio: 16/9;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
-.portfolio-thumbnail img {
+.portfolio-thumbnail img,
+.portfolio-thumbnail video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .portfolio-content {
   padding: 32px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Contact Section */
@@ -503,12 +531,14 @@ footer {
     width: 100%;
   }
 
-  .grid-3 {
+  .grid-3,
+  .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-2 {
-    grid-template-columns: repeat(2, 1fr);
+  .grid-2,
+  .why-features {
+    grid-template-columns: 1fr;
   }
 
   .contact-grid {
@@ -582,8 +612,13 @@ footer {
     min-height: auto;
   }
 
-  .hero-visual {
-    height: 50vh;
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .portfolio-card {
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   .hero-actions {
