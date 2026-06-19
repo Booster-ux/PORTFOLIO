@@ -29,25 +29,36 @@
     </nav>
 
     <main id="app">
-        <!-- Centered Hero Section -->
-        <section id="hero">
-            <div class="hero-cinematic-container">
-                <img src="./assets/hero_final.jpg" alt="GameOnAI Official Mascot" id="hero-main-visual">
-                <div class="hero-atmosphere">
-                    <div class="particle-layer"></div>
-                    <div class="glow-layer"></div>
-                </div>
+        <!-- Split Hero Section -->
+        <section id="hero" class="hero-split">
+            <!-- Animated Background Layers -->
+            <div class="hero-bg-container">
+                <div class="hero-city-bg"></div>
+                <div class="hero-glow-orb orb-1"></div>
+                <div class="hero-glow-orb orb-2"></div>
+                <div class="hero-fog-layer"></div>
+                <div class="hero-overlay"></div>
             </div>
 
-            <div class="container hero-content-centered">
-                <div class="hero-badge reveal">ROBLOX DEVELOPMENT STUDIO</div>
-                <h1 class="hero-title reveal">Building Roblox Games <br>That <span class="gradient-text">Players
-                        Remember</span></h1>
-                <p class="hero-subtitle reveal">Full Game Development, Systems, Animation, Environments, <br>UI/UX, VFX
-                    & Custom Assets.</p>
-                <div class="hero-actions reveal">
-                    <a href="#portfolio" class="btn-primary">View Portfolio</a>
-                    <a href="#contact" class="btn-secondary">Start Your Project</a>
+            <div class="container hero-split-inner">
+                <!-- Left Side: Content -->
+                <div class="hero-content-side">
+                    <div class="hero-badge reveal">ROBLOX DEVELOPMENT STUDIO</div>
+                    <h1 class="hero-title reveal">Building Roblox Games <br>That <span class="gradient-text">Players
+                            Remember</span></h1>
+                    <p class="hero-subtitle reveal">Full Game Development, Systems, Animation, Environments, <br>UI/UX,
+                        VFX & Custom Assets.</p>
+                    <div class="hero-actions reveal">
+                        <a href="#portfolio" class="btn-primary">View Portfolio</a>
+                        <a href="#contact" class="btn-secondary">Start Your Project</a>
+                    </div>
+                </div>
+
+                <!-- Right Side: Visual -->
+                <div class="hero-visual-side">
+                    <div class="avatar-container reveal">
+                        <img src="./assets/hero_final.jpg" alt="GameOnAI Mascot" id="hero-main-visual">
+                    </div>
                 </div>
             </div>
         </section>
@@ -61,6 +72,7 @@
                 </div>
 
                 <div class="services-grid">
+                    <!-- ... identical services content ... -->
                     <div class="service-card reveal" onclick="location.href='./services/game-dev.html'">
                         <div class="service-icon">🎮</div>
                         <h3>Full Game<br>Development</h3>
@@ -160,20 +172,14 @@
 
                 <div class="contact-card reveal">
                     <div class="contact-info">
-                        <div class="contact-method">
-                            <span class="method-label">Discord</span>
-                            <span class="method-value">gameonai</span>
-                        </div>
-                        <div class="contact-method">
-                            <span class="method-label">Email</span>
-                            <span class="method-value">gracegameonai@gmail.com</span>
-                        </div>
+                        <div class="contact-method"><span class="method-label">Discord</span><span
+                                class="method-value">gameonai</span></div>
+                        <div class="contact-method"><span class="method-label">Email</span><span
+                                class="method-value">gracegameonai@gmail.com</span></div>
                     </div>
                     <form class="contact-form-premium">
-                        <div class="form-row">
-                            <input type="text" placeholder="Your Name">
-                            <input type="email" placeholder="Email Address">
-                        </div>
+                        <div class="form-row"><input type="text" placeholder="Your Name"><input type="email"
+                                placeholder="Email Address"></div>
                         <div class="form-row">
                             <input type="text" placeholder="Project Budget (USD)">
                             <select>

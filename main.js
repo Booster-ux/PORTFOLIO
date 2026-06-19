@@ -25,57 +25,73 @@ window.addEventListener('load', () => {
     opacity: 0,
     duration: 0.8,
     ease: 'power2.inOut',
-    onComplete: () => document.getElementById('page-loader').style.display = 'none'
+    onComplete: () => {
+      document.getElementById('page-loader').style.display = 'none';
+    }
   })
     .from('.hero-badge', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.2')
     .from('.hero-title', { y: 40, opacity: 0, duration: 1.2, ease: 'expo.out' }, '-=0.8')
     .from('.hero-subtitle', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.8')
     .from('.hero-actions', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.8')
-    .from('#hero-main-visual', {
-      scale: 1.2,
+    .from('.hero-visual-side', {
+      x: 40,
       opacity: 0,
-      duration: 2.5,
-      ease: 'expo.out',
-      filter: 'blur(30px) brightness(0)'
-    }, '-=1.8');
+      duration: 2,
+      ease: 'power4.out'
+    }, '-=1.2');
 
-  // Mouse Parallax for Hero Main Visual
-  const heroSection = document.querySelector('#hero');
-  const heroVisual = document.querySelector('#hero-main-visual');
+  // Background Glow Orb Animations (Linear-style)
+  gsap.to('.orb-1', {
+    x: '20%',
+    y: '10%',
+    duration: 12,
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut'
+  });
 
-  if (heroSection && heroVisual) {
-    heroSection.addEventListener('mousemove', (e) => {
+  gsap.to('.orb-2', {
+    x: '-10%',
+    y: '-15%',
+    duration: 10,
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut'
+  });
+
+  // Subtitling character floating
+  gsap.to('#hero-main-visual', {
+    y: -15,
+    duration: 4,
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut'
+  });
+
+  // Mouse Parallax for Visual Side
+  const heroVisualSide = document.querySelector('.hero-visual-side');
+  if (heroVisualSide) {
+    window.addEventListener('mousemove', (e) => {
       const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      const xPercent = (clientX / innerWidth - 0.5) * 2;
-      const yPercent = (clientY / innerHeight - 0.5) * 2;
+      const xPos = (clientX / window.innerWidth - 0.5) * 30;
+      const yPos = (clientY / window.innerHeight - 0.5) * 30;
 
-      gsap.to(heroVisual, {
-        x: xPercent * 8,
-        y: yPercent * 8,
-        duration: 1.5,
+      gsap.to('#hero-main-visual', {
+        x: xPos,
+        y: yPos - 15, // keep floating offset
+        duration: 2,
         ease: 'power2.out'
       });
     });
   }
 
-  // Handle Nav Scroll Effect
-  const nav = document.getElementById('main-nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  });
-
-  // Reveal on Scroll Animations
+  // Scroll Revelations
   const reveals = document.querySelectorAll('.reveal');
   reveals.forEach(el => {
     gsap.to(el, {
       opacity: 1,
       y: 0,
-      duration: 1.4,
+      duration: 1.2,
       ease: 'expo.out',
       scrollTrigger: {
         trigger: el,
@@ -85,13 +101,22 @@ window.addEventListener('load', () => {
     });
   });
 
-  // Scroll-based depth effect
-  gsap.to('#hero-main-visual', {
-    scale: 1.05,
-    y: 50,
+  // Subtle Nav Scroll
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+
+  // Parallax effect on Section Scroll
+  gsap.to('.hero-city-bg', {
+    yPercent: 20,
     ease: 'none',
     scrollTrigger: {
-      trigger: '#hero',
+      trigger: '.hero-split',
       start: 'top top',
       end: 'bottom top',
       scrub: true
