@@ -4,110 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Game Development | GameOnAI</title>
+    <title>Full Game Production | GameOnAI Studio</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        .service-nav {
+            position: fixed;
+            top: 32px;
+            left: 32px;
+            z-index: 1000;
+        }
+
+        .hero-section {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .feature-item {
+            text-align: left;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+        }
+    </style>
 </head>
 
 <body>
-    <nav id="main-nav" class="scrolled">
-        <div class="nav-container">
-            <a href="../index.html" class="logo">GAMEON<span class="gradient-text">AI</span></a>
-            <ul class="nav-menu">
-                <li><a href="../index.html" class="nav-link">Home</a></li>
-                <li><a href="../index.html#services" class="nav-link active">Services</a></li>
-                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <a href="../index.html" class="btn-primary service-nav" style="padding: 10px 20px; font-size: 0.85rem;">← Back</a>
 
-    <header class="service-detail-hero" style="background-image: url('../assets/game_scene.png');">
-        <div class="nav-container" style="position: relative; z-index: 10;">
-            <span class="hero-tag">Core Studio Service</span>
-            <h1 class="gradient-text" style="font-size: 5rem;">FULL GAME <br>PRODUCTION</h1>
-            <p style="max-width: 600px; color: var(--text-dim); margin-top: 20px;">We transform visions into
-                market-ready Roblox experiences. From technical architecture to gameplay loops, our studio delivers
-                end-to-end production.</p>
+    <header class="hero-section">
+        <div class="container">
+            <span class="hero-tag reveal">End-to-End Production</span>
+            <h1 class="hero-title reveal">ROBLOX FULL GAME <br><span class="gradient-text">PRODUCTION</span></h1>
+            <p class="hero-subtitle reveal">Scaling from concept to global launch. We handle logic, environments,
+                monetization, and live-ops.</p>
         </div>
     </header>
 
-    <main class="nav-container">
-        <section class="service-section">
-            <div class="section-head">
-                <span class="section-tag">PORTFOLIO</span>
-                <h2>RECENT <span class="gradient-text">PROJECTS</span></h2>
+    <main class="container" style="padding: 100px 0;">
+        <section>
+            <div class="section-header reveal">
+                <h2>CRAFTING THE <span class="gradient-text">EXPERIENCE</span></h2>
+                <p>We specialize in different genres, ensuring each game reaches its technical and commercial potential.
+                </p>
             </div>
 
-            <div class="portfolio-masonry">
-                <div class="masonry-item reveal"><img
-                        src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1000"
-                        alt="Game 1"></div>
-                <div class="masonry-item reveal"><img
-                        src="https://images.unsplash.com/photo-1614728263952-84ea206f99b6?auto=format&fit=crop&q=80&w=1000"
-                        alt="Game 2"></div>
-                <div class="masonry-item reveal"><img
-                        src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1000"
-                        alt="Game 3"></div>
-            </div>
-        </section>
-
-        <section class="service-section">
-            <div class="section-head">
-                <span class="section-tag">OUR WORKFLOW</span>
-                <h2>PRODUCTION <span class="gradient-text">PROCESS</span></h2>
-            </div>
-
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-top: 40px;">
-                <div class="glass reveal" style="padding: 30px; border-radius: 20px;">
-                    <div
-                        style="font-size: 3rem; font-weight: 800; color: var(--cyan); opacity: 0.3; margin-bottom: 20px;">
-                        01</div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Planning</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-dim);">Conceptualization, monetization strategy, and
-                        technical roadmap.</p>
+            <div class="feature-grid">
+                <div class="feature-item reveal">
+                    <h3 style="color: var(--indigo);">RPG & Open World</h3>
+                    <p>Massive landscapes, quest systems, and complex player progression mechanics.</p>
                 </div>
-                <div class="glass reveal" style="padding: 30px; border-radius: 20px;">
-                    <div
-                        style="font-size: 3rem; font-weight: 800; color: var(--cyan); opacity: 0.3; margin-bottom: 20px;">
-                        02</div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Design</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-dim);">Environment design, UI mockups, and gameplay
-                        mechanics sketching.</p>
+                <div class="feature-item reveal">
+                    <h3 style="color: var(--indigo);">Simulators & Tycoons</h3>
+                    <p>Addictive core loops, monetization optimization, and player retention strategies.</p>
                 </div>
-                <div class="glass reveal" style="padding: 30px; border-radius: 20px;">
-                    <div
-                        style="font-size: 3rem; font-weight: 800; color: var(--cyan); opacity: 0.3; margin-bottom: 20px;">
-                        03</div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Development</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-dim);">High-performance coding, system integration,
-                        and level building.</p>
-                </div>
-                <div class="glass reveal" style="padding: 30px; border-radius: 20px;">
-                    <div
-                        style="font-size: 3rem; font-weight: 800; color: var(--cyan); opacity: 0.3; margin-bottom: 20px;">
-                        04</div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Testing</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-dim);">QA, stress testing, and performance
-                        optimization for all devices.</p>
-                </div>
-                <div class="glass reveal" style="padding: 30px; border-radius: 20px;">
-                    <div
-                        style="font-size: 3rem; font-weight: 800; color: var(--cyan); opacity: 0.3; margin-bottom: 20px;">
-                        05</div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Launch</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-dim);">Production release, marketing support, and
-                        post-launch analytics.</p>
+                <div class="feature-item reveal">
+                    <h3 style="color: var(--indigo);">Multiplayer PvP</h3>
+                    <p>Fast-paced combat, matchmaking, and lag-free system architecture.</p>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="service-section">
-            <div class="glass reveal" style="padding: 80px; border-radius: 40px; text-align: center;">
-                <h2 style="font-size: 3rem; margin-bottom: 20px;">READY TO <span class="gradient-text">BUILD YOUR
-                        GAME?</span></h2>
-                <p style="margin-bottom: 40px; color: var(--text-dim);">Discord: gameonai</p>
-                <a href="../index.html#contact" class="nav-link active"
-                    style="padding: 15px 40px; border-radius: 10px;">Inquire Now</a>
+        <section style="margin-top: 160px;">
+            <div class="section-header reveal">
+                <span>Showcase</span>
+                <h2>RECENT <span class="gradient-text">PRODUCTIONS</span></h2>
+            </div>
+            <div class="portfolio-masonry reveal">
+                <!-- Placeholders for future MP4/GIF/Img -->
+                <div class="masonry-item"><img
+                        src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800"
+                        alt="Work 1"></div>
+                <div class="masonry-item"><img
+                        src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80&w=800"
+                        alt="Work 2"></div>
+            </div>
+        </section>
+
+        <section id="contact" style="margin-top: 160px;">
+            <div class="section-header reveal">
+                <h2>READY TO <span class="gradient-text">BUILD YOUR GAME?</span></h2>
+                <p>Reach out today for a consultation and project quote.</p>
+                <div style="margin-top: 40px;">
+                    <a href="../index.html#contact" class="btn-primary">Inquire Now</a>
+                </div>
             </div>
         </section>
     </main>
@@ -123,10 +114,10 @@
 
         const reveals = document.querySelectorAll('.reveal');
         reveals.forEach(el => {
-            gsap.from(el, {
-                opacity: 0,
-                y: 40,
+            gsap.to(el, {
+                opacity: 1, y: 0,
                 duration: 1.2,
+                ease: 'expo.out',
                 scrollTrigger: { trigger: el, start: 'top 90%' }
             });
         });

@@ -4,106 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Systems Development | GameOnAI</title>
+    <title>Systems Development | GameOnAI Studio</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
-    <nav id="main-nav" class="scrolled">
-        <div class="nav-container">
-            <a href="../index.html" class="logo">GAMEON<span class="gradient-text">AI</span></a>
-            <ul class="nav-menu">
-                <li><a href="../index.html" class="nav-link">Home</a></li>
-                <li><a href="../index.html#services" class="nav-link active">Services</a></li>
-                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<body style="text-align: center;">
+    <a href="../index.html" class="btn-primary"
+        style="position: fixed; top: 32px; left: 32px; padding: 10px 20px; font-size: 0.85rem; z-index:1000;">← Back</a>
 
-    <header class="service-detail-hero"
-        style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1500');">
-        <div class="nav-container" style="position: relative; z-index: 10;">
-            <span class="hero-tag">Technical Architecture</span>
-            <h1 class="gradient-text" style="font-size: 5rem;">SYSTEMS <br>ARCHITECTURE</h1>
-            <p style="max-width: 600px; color: var(--text-dim); margin-top: 20px;">High-performance backend logic and
-                complex gameplay systems built for scale and stability.</p>
+    <header class="section"
+        style="min-height: 60vh; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+        <div class="container">
+            <span class="hero-tag reveal">Technical Core</span>
+            <h1 class="hero-title reveal">ROBLOX SYSTEMS <br><span class="gradient-text">DEVELOPMENT</span></h1>
+            <p class="hero-subtitle reveal">High-performance backend logic, secure data saving, and scalable multiplayer
+                systems.</p>
         </div>
     </header>
 
-    <main class="nav-container">
-        <!-- Systems Showcase -->
-        <section class="service-section">
-            <div class="section-head">
-                <span class="section-tag">CAPABILITIES</span>
-                <h2>CORE <span class="gradient-text">SYSTEMS</span></h2>
+    <main class="container" style="padding: 100px 0;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+            <div class="service-card reveal">
+                <h3>Inventory Systems</h3>
+                <p>Weight, rarities, and custom attributes.</p>
             </div>
+            <div class="service-card reveal">
+                <h3>Matchmaking</h3>
+                <p>Global server allocation and queues.</p>
+            </div>
+            <div class="service-card reveal">
+                <h3>Combat Systems</h3>
+                <p>Hit detection and server validation.</p>
+            </div>
+            <div class="service-card reveal">
+                <h3>Data Saving</h3>
+                <p>Optimized and secure cloud storage.</p>
+            </div>
+            <div class="service-card reveal">
+                <h3>Quest Engines</h3>
+                <p>Dynamic branching mission logic.</p>
+            </div>
+            <div class="service-card reveal">
+                <h3>Monetization</h3>
+                <p>Storefronts and premium triggers.</p>
+            </div>
+        </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-                <div class="glass reveal"
-                    style="padding: 30px; border-radius: 20px; border-left: 4px solid var(--cyan);">
-                    <h3 style="color: #fff; margin-bottom: 10px;">Inventory Systems</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-dim);">Complex item management with weight, rarity,
-                        and custom attributes.</p>
-                </div>
-                <div class="glass reveal"
-                    style="padding: 30px; border-radius: 20px; border-left: 4px solid var(--purple);">
-                    <h3 style="color: #fff; margin-bottom: 10px;">Combat Logic</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-dim);">Hit detection, skill cooldowns, and
-                        server-side validation.</p>
-                </div>
-                <div class="glass reveal"
-                    style="padding: 30px; border-radius: 20px; border-left: 4px solid var(--electric-blue);">
-                    <h3 style="color: #fff; margin-bottom: 10px;">Quest Engines</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-dim);">Dynamic mission systems with branching paths
-                        and reward scaling.</p>
-                </div>
-                <div class="glass reveal"
-                    style="padding: 30px; border-radius: 20px; border-left: 4px solid var(--cyan);">
-                    <h3 style="color: #fff; margin-bottom: 10px;">Matchmaking</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-dim);">Advanced queue systems for competitive and
-                        casual gameplay.</p>
-                </div>
-                <div class="glass reveal"
-                    style="padding: 30px; border-radius: 20px; border-left: 4px solid var(--purple);">
-                    <h3 style="color: #fff; margin-bottom: 10px;">Data Storage</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-dim);">Secure, optimized player data saving with
-                        ProfileService/DataStore2.</p>
-                </div>
-                <div class="glass reveal"
-                    style="padding: 30px; border-radius: 20px; border-left: 4px solid var(--electric-blue);">
-                    <h3 style="color: #fff; margin-bottom: 10px;">Monetization</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-dim);">Storefronts, trading systems, and premium
-                        gamepass integration.</p>
-                </div>
+        <section style="margin-top: 120px;">
+            <div class="section-header reveal">
+                <h2>SYSTEM <span class="gradient-text">SHOWCASE</span></h2>
             </div>
-        </section>
-
-        <!-- Technical Flow -->
-        <section class="service-section">
-            <div class="section-head">
-                <span class="section-tag">LOGIC FLOW</span>
-                <h2>SYSTEM <span class="gradient-text">ARCHITECTURE</span></h2>
-            </div>
-            <div class="glass reveal" style="padding: 60px; border-radius: 30px; text-align: center;">
-                <div style="font-style: italic; color: var(--text-dim);">Animated System Diagrams Coming Soon</div>
+            <div class="portfolio-masonry reveal">
+                <div class="masonry-item"><img
+                        src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+                        alt="Systems 1"></div>
             </div>
         </section>
     </main>
-
-    <script type="module">
-        import gsap from 'gsap';
-        import { ScrollTrigger } from 'gsap/ScrollTrigger';
-        import Lenis from 'lenis';
-        gsap.registerPlugin(ScrollTrigger);
-        const lenis = new Lenis();
-        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-        requestAnimationFrame(raf);
-
-        const reveals = document.querySelectorAll('.reveal');
-        reveals.forEach(el => {
-            gsap.from(el, { opacity: 0, y: 40, duration: 1.2, scrollTrigger: { trigger: el, start: 'top 90%' } });
-        });
-    </script>
+    <script type="module" src="../main.js"></script>
 </body>
 
 </html>

@@ -4,104 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map & Environment Design | GameOnAI</title>
+    <title>Environment Design | GameOnAI Studio</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
-    <nav id="main-nav" class="scrolled">
-        <div class="nav-container">
-            <a href="../index.html" class="logo">GAMEON<span class="gradient-text">AI</span></a>
-            <ul class="nav-menu">
-                <li><a href="../index.html" class="nav-link">Home</a></li>
-                <li><a href="../index.html#services" class="nav-link active">Services</a></li>
-                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<body style="text-align: center;">
+    <a href="../index.html" class="btn-primary"
+        style="position: fixed; top: 32px; left: 32px; padding: 10px 20px; font-size: 0.85rem; z-index:1000;">← Back</a>
 
-    <header class="service-detail-hero" style="background-image: url('../assets/map_showcase.png');">
-        <div class="nav-container" style="position: relative; z-index: 10;">
-            <span class="hero-tag">World Building</span>
-            <h1 class="gradient-text" style="font-size: 5rem;">MAP & ENV <br>DESIGN</h1>
-            <p style="max-width: 600px; color: var(--text-dim); margin-top: 20px;">Immersive worlds crafted with
-                precision. We build high-performance environments that tell a story.</p>
+    <header class="section"
+        style="min-height: 60vh; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+        <div class="container">
+            <span class="hero-tag reveal">World Building</span>
+            <h1 class="hero-title reveal">ENVIRONMENT <br><span class="gradient-text">DESIGN</span></h1>
+            <p class="hero-subtitle reveal">Breathtaking maps with professional lighting and high-end asset integration.
+            </p>
         </div>
     </header>
 
-    <main class="nav-container">
-        <!-- Categories -->
-        <section class="service-section">
-            <div class="section-head">
-                <span class="section-tag">SPECIALIZATIONS</span>
-                <h2>WORLD <span class="gradient-text">THEMES</span></h2>
+    <main class="container" style="padding: 100px 0;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+            <div class="service-card reveal">
+                <h3>Atmospheric Lighting</h3>
+                <p>Day/night cycles and custom shadows.</p>
             </div>
+            <div class="service-card reveal">
+                <h3>Custom Terrain</h3>
+                <p>Smooth, realistic landscapes.</p>
+            </div>
+            <div class="service-card reveal">
+                <h3>Map Polishing</h3>
+                <p>Optimized for mobile and low-end PCs.</p>
+            </div>
+        </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
-                <div class="glass reveal" style="padding: 25px; border-radius: 24px; text-align: center;">
-                    <div
-                        style="height: 150px; background: rgba(0,242,255,0.05); border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
-                        🌆</div>
-                    <h3>Cities</h3>
-                </div>
-                <div class="glass reveal" style="padding: 25px; border-radius: 24px; text-align: center;">
-                    <div
-                        style="height: 150px; background: rgba(188,19,254,0.05); border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
-                        🏰</div>
-                    <h3>Fantasy</h3>
-                </div>
-                <div class="glass reveal" style="padding: 25px; border-radius: 24px; text-align: center;">
-                    <div
-                        style="height: 150px; background: rgba(41,121,255,0.05); border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
-                        🚀</div>
-                    <h3>Sci-Fi</h3>
-                </div>
-                <div class="glass reveal" style="padding: 25px; border-radius: 24px; text-align: center;">
-                    <div
-                        style="height: 150px; background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
-                        🪖</div>
-                    <h3>Military</h3>
-                </div>
-                <div class="glass reveal" style="padding: 25px; border-radius: 24px; text-align: center;">
-                    <div
-                        style="height: 150px; background: rgba(0,242,255,0.05); border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
-                        🌄</div>
-                    <h3>Open World</h3>
-                </div>
+        <section style="margin-top: 120px;">
+            <div class="section-header reveal">
+                <h2>WORLD <span class="gradient-text">GALLERY</span></h2>
             </div>
-        </section>
-
-        <!-- Portfolio -->
-        <section class="service-section">
-            <div class="section-head">
-                <span class="section-tag">GALLERY</span>
-                <h2>RECENT <span class="gradient-text">ENVIRONMENT WORK</span></h2>
-            </div>
-            <div class="portfolio-masonry">
-                <div class="masonry-item reveal"><img
-                        src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1000"
+            <div class="portfolio-masonry reveal">
+                <div class="masonry-item"><img
+                        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800"
                         alt="Map 1"></div>
-                <div class="masonry-item reveal"><img
-                        src="https://images.unsplash.com/photo-1614728263952-84ea206f99b6?auto=format&fit=crop&q=80&w=1000"
-                        alt="Map 2"></div>
             </div>
         </section>
     </main>
-
-    <script type="module">
-        import gsap from 'gsap';
-        import { ScrollTrigger } from 'gsap/ScrollTrigger';
-        import Lenis from 'lenis';
-        gsap.registerPlugin(ScrollTrigger);
-        const lenis = new Lenis();
-        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-        requestAnimationFrame(raf);
-
-        const reveals = document.querySelectorAll('.reveal');
-        reveals.forEach(el => {
-            gsap.from(el, { opacity: 0, y: 40, duration: 1.2, scrollTrigger: { trigger: el, start: 'top 90%' } });
-        });
-    </script>
+    <script type="module" src="../main.js"></script>
 </body>
 
 </html>

@@ -4,91 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Assets | GameOnAI</title>
+    <title>Game Assets | GameOnAI Studio</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
-    <nav id="main-nav" class="scrolled">
-        <div class="nav-container">
-            <a href="../index.html" class="logo">GAMEON<span class="gradient-text">AI</span></a>
-            <ul class="nav-menu">
-                <li><a href="../index.html" class="nav-link">Home</a></li>
-                <li><a href="../index.html#services" class="nav-link active">Services</a></li>
-                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<body style="text-align: center;">
+    <a href="../index.html" class="btn-primary"
+        style="position: fixed; top: 32px; left: 32px; padding: 10px 20px; font-size: 0.85rem; z-index:1000;">← Back</a>
 
-    <header class="service-detail-hero" style="background-image: url('../assets/map_showcase.png');">
-        <div class="nav-container" style="position: relative; z-index: 10;">
-            <span class="hero-tag">Asset Library</span>
-            <h1 class="gradient-text" style="font-size: 5rem;">GAME <br>ASSETS</h1>
-            <p style="max-width: 600px; color: var(--text-dim); margin-top: 20px;">High-quality, optimized 3D models and
-                props built for performance and visual fidelity in Roblox.</p>
+    <header class="section"
+        style="min-height: 60vh; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+        <div class="container">
+            <span class="hero-tag reveal">Modular Components</span>
+            <h1 class="hero-title reveal">CUSTOM GAME <br><span class="gradient-text">ASSETS</span></h1>
+            <p class="hero-subtitle reveal">High-quality, optimized 3D models tailored for the Roblox engine.</p>
         </div>
     </header>
 
-    <main class="nav-container">
-        <!-- Asset Categories -->
-        <section class="service-section">
-            <div class="section-head">
-                <span class="section-tag">CATALOG</span>
-                <h2>ASSET <span class="gradient-text">CATEGORIES</span></h2>
+    <main class="container" style="padding: 100px 0;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+            <div class="service-card reveal">
+                <h3>Weapons</h3>
+                <p>Melee and ranged combat gear.</p>
             </div>
+            <div class="service-card reveal">
+                <h3>Vehicles</h3>
+                <p>Cars, planes, and mounts.</p>
+            </div>
+            <div class="service-card reveal">
+                <h3>Props</h3>
+                <p>Atmospheric environmental objects.</p>
+            </div>
+        </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
-                <div class="glass reveal" style="padding: 25px; border-radius: 20px; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 10px;">⚔️</div>
-                    <h3 style="font-size: 1rem;">Weapons</h3>
-                </div>
-                <div class="glass reveal" style="padding: 25px; border-radius: 20px; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 10px;">👤</div>
-                    <h3 style="font-size: 1rem;">Characters</h3>
-                </div>
-                <div class="glass reveal" style="padding: 25px; border-radius: 20px; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 10px;">🏎️</div>
-                    <h3 style="font-size: 1rem;">Vehicles</h3>
-                </div>
-                <div class="glass reveal" style="padding: 25px; border-radius: 20px; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 10px;">📦</div>
-                    <h3 style="font-size: 1rem;">Props</h3>
-                </div>
-                <div class="glass reveal" style="padding: 25px; border-radius: 20px; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 10px;">🏢</div>
-                    <h3 style="font-size: 1rem;">Buildings</h3>
-                </div>
+        <section style="margin-top: 120px;">
+            <div class="section-header reveal">
+                <h2>ASSET <span class="gradient-text">LIBRARY</span></h2>
             </div>
-        </section>
-
-        <!-- Showcase -->
-        <section class="service-section">
-            <div class="section-head">
-                <span class="section-tag">SHOWCASE</span>
-                <h2>RECENT <span class="gradient-text">MODELS</span></h2>
-            </div>
-            <div class="portfolio-masonry">
-                <div class="masonry-item reveal"><img
-                        src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1000"
+            <div class="portfolio-masonry reveal">
+                <div class="masonry-item"><img
+                        src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800"
                         alt="Asset 1"></div>
             </div>
         </section>
     </main>
-
-    <script type="module">
-        import gsap from 'gsap';
-        import { ScrollTrigger } from 'gsap/ScrollTrigger';
-        import Lenis from 'lenis';
-        gsap.registerPlugin(ScrollTrigger);
-        const lenis = new Lenis();
-        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-        requestAnimationFrame(raf);
-
-        const reveals = document.querySelectorAll('.reveal');
-        reveals.forEach(el => {
-            gsap.from(el, { opacity: 0, y: 40, duration: 1.2, scrollTrigger: { trigger: el, start: 'top 90%' } });
-        });
-    </script>
+    <script type="module" src="../main.js"></script>
 </body>
 
 </html>
