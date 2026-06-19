@@ -452,6 +452,21 @@ p {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .nav-menu {
+    gap: 20px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .hero-tag {
+    font-size: 0.8rem;
+    padding: 6px 15px;
+  }
+}
+
 @media (max-width: 1024px) {
   .nav-container {
     padding: 0 30px;
@@ -463,13 +478,17 @@ p {
 
   .hero-character-box {
     width: 50%;
-    opacity: 0.5;
+    opacity: 0.3;
+  }
+
+  .hero-title {
+    font-size: 4.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
   }
 
   .nav-menu {
@@ -484,5 +503,11 @@ p {
     padding: 0 20px;
     text-align: center;
     max-width: 100%;
+  }
+
+  #hero-btns {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 }
