@@ -17,12 +17,12 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-// Global Entrance & Performance Orchestration
+// Animation Orchestration
 window.addEventListener('load', () => {
-  const tl = gsap.timeline();
+  const tlEntrance = gsap.timeline();
 
-  // Loader sequence
-  tl.to('#page-loader', {
+  // Page Loader transition
+  tlEntrance.to('#page-loader', {
     opacity: 0,
     duration: 1,
     ease: 'expo.inOut',
@@ -31,90 +31,73 @@ window.addEventListener('load', () => {
     }
   });
 
-  // Hero Split Entrance (Linear Style)
-  tl.from('.hero-badge', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.4')
-    .from('h1', { y: 40, opacity: 0, duration: 1.2, ease: 'expo.out' }, '-=0.8')
-    .from('.hero-subtitle', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.9')
-    .from('.hero-actions', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.8')
-    .from('.hero-trust', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.8')
-    .from('.hero-visual', {
-      x: 60,
-      opacity: 0,
-      scale: 0.95,
-      duration: 1.8,
-      ease: 'expo.out'
-    }, '-=1.4');
+  // Hero Section Entrance - Settles permanently
+  tlEntrance.to('.hero-entrance', {
+    opacity: 1,
+    y: 0,
+    x: 0,
+    scale: 1,
+    duration: 1.4,
+    stagger: 0.15,
+    ease: 'expo.out'
+  }, '-=0.4');
 
-  // Living Background: Orb Drift
-  gsap.to('.orb-1', {
-    x: '20%',
-    y: '15%',
-    duration: 15,
-    repeat: -1,
-    yoyo: true,
-    ease: 'sine.inOut'
+  // Background Atmosphere: Living Orbs
+  const orbs = ['.orb-1', '.orb-2', '.orb-3', '.orb-4', '.orb-5'];
+  orbs.forEach((orb, i) => {
+    gsap.to(orb, {
+      x: (i % 2 === 0 ? '15%' : '-15%'),
+      y: (i % 3 === 0 ? '10%' : '-10%'),
+      duration: 10 + (i * 2),
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut'
+    });
   });
 
-  gsap.to('.orb-2', {
-    x: '-10%',
-    y: '-20%',
-    duration: 12,
-    repeat: -1,
-    yoyo: true,
-    ease: 'sine.inOut'
-  });
-
-  gsap.to('.orb-3', {
-    x: '15%',
-    y: '25%',
-    duration: 18,
-    repeat: -1,
-    yoyo: true,
-    ease: 'sine.inOut'
-  });
-
-  // Mascot Breathing & Subtle Mouse Parallax
+  // Mascot: Breathing Motion
   gsap.to('#mascot-main', {
-    y: -20,
+    y: -15,
     duration: 4,
     repeat: -1,
     yoyo: true,
     ease: 'sine.inOut'
   });
 
+  // Mouse Parallax for Hero Visual
   const heroVisual = document.querySelector('.hero-visual');
   if (heroVisual) {
     window.addEventListener('mousemove', (e) => {
       const { clientX, clientY } = e;
-      const xPos = (clientX / window.innerWidth - 0.5) * 40;
-      const yPos = (clientY / window.innerHeight - 0.5) * 40;
+      const xMoved = (clientX / window.innerWidth - 0.5) * 30;
+      const yMoved = (clientY / window.innerHeight - 0.5) * 30;
 
       gsap.to('#mascot-main', {
-        x: xPos,
-        y: yPos - 20, // offset for breathing
+        x: xMoved,
+        y: yMoved - 15,
         duration: 2,
         ease: 'power2.out'
       });
     });
   }
 
-  // Unified Scroll Revelation Flow
+  // Scroll Reveal (Filtered to ignore hero elements)
   const reveals = document.querySelectorAll('.reveal');
   reveals.forEach(el => {
-    gsap.fadeReveal = gsap.to(el, {
+    gsap.to(el, {
       opacity: 1,
       y: 0,
-      duration: 1.4,
+      duration: 1.2,
       ease: 'expo.out',
       scrollTrigger: {
         trigger: el,
-        start: 'top 90%',
+        start: 'top 92%',
         toggleActions: 'play none none none'
       }
     });
   });
 
-  // Navigation Logic
+  // Nav Background on scroll
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -124,9 +107,9 @@ window.addEventListener('load', () => {
     }
   });
 
-  // Global Parallax depth for background city (if users re-add it) or orbs
+  // Global Scroll Parallax depth for background scene
   gsap.to('.bg-scene', {
-    yPercent: -15,
+    yPercent: -10,
     ease: 'none',
     scrollTrigger: {
       trigger: 'body',
