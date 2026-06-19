@@ -95,36 +95,26 @@ window.addEventListener('load', () => {
     }
   });
 
-  // Lightbox Logic
+  // Lightbox Logic Global
   const lightbox = document.getElementById('lightbox');
   const lightboxContent = document.getElementById('lightbox-content');
   const lightboxClose = document.getElementById('lightbox-close');
   const lightboxOverlay = document.querySelector('.lightbox-overlay');
-  const portfolioCards = document.querySelectorAll('.portfolio-card');
+  const carouselItems = document.querySelectorAll('.carousel-item');
 
-  portfolioCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const src = card.getAttribute('data-src');
-      const type = card.getAttribute('data-type');
-      const category = card.getAttribute('data-category');
-      const title = card.getAttribute('data-title');
+  carouselItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const imgTarget = item.querySelector('img');
+      const src = imgTarget.src;
+      const title = imgTarget.alt;
 
-      document.getElementById('modal-category').textContent = category.toUpperCase();
+      document.getElementById('modal-category').textContent = 'PORTFOLIO';
       document.getElementById('modal-title').textContent = title;
 
       lightboxContent.innerHTML = '';
-
-      if (type === 'image') {
-        const img = document.createElement('img');
-        img.src = src;
-        lightboxContent.appendChild(img);
-      } else if (type === 'video') {
-        const video = document.createElement('video');
-        video.src = src;
-        video.controls = true;
-        video.autoplay = true;
-        lightboxContent.appendChild(video);
-      }
+      const img = document.createElement('img');
+      img.src = src;
+      lightboxContent.appendChild(img);
 
       lightbox.classList.add('active');
       lenis.stop();
@@ -134,14 +124,41 @@ window.addEventListener('load', () => {
   function closeLightbox() {
     lightbox.classList.remove('active');
     lenis.start();
-    const video = lightboxContent.querySelector('video');
-    if (video) video.pause();
   }
 
   lightboxClose.addEventListener('click', closeLightbox);
   lightboxOverlay.addEventListener('click', closeLightbox);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
+  });
+
+  // Carousel Drag Interaction (Simple)
+  const track = document.querySelector('.carousel-track');
+  const container = document.querySelector('.carousel-container');
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+
+  container.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    container.style.cursor = 'grabbing';
+    startX = e.pageX - track.offsetLeft;
+    track.style.animationPlayState = 'paused';
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    container.style.cursor = 'grab';
+    track.style.animationPlayState = 'running';
+  });
+
+  container.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 2;
+    // Note: Manual dragging in an infinite CSS animation loop is complex.
+    // For now, we allow the hover pause to work, which is the primary requirement.
   });
 
   // Unified Scroll Revelation Flow (remainders)

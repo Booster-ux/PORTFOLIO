@@ -378,51 +378,86 @@ p {
   align-items: stretch;
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  align-items: stretch;
+/* Studio Showcase Carousel */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  position: relative;
+  cursor: grab;
 }
 
-.portfolio-card {
-  background: var(--dark-900);
-  border: 1px solid var(--glass-border);
-  border-radius: 24px;
-  overflow: hidden;
-  height: 100%;
+.carousel-container:active {
+  cursor: grabbing;
+}
+
+.carousel-track {
   display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  transition: all 0.4s var(--easing);
+  gap: 24px;
+  width: max-content;
+  animation: scroll-carousel 60s linear infinite;
 }
 
-.portfolio-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  border-color: var(--indigo);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+.carousel-container:hover .carousel-track {
+  animation-play-state: paused;
 }
 
-.portfolio-thumbnail {
-  width: 100%;
-  aspect-ratio: 16/9;
-  overflow: hidden;
+.carousel-item {
   flex-shrink: 0;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s var(--easing);
 }
 
-.portfolio-thumbnail img,
-.portfolio-thumbnail video {
-  width: 100%;
+.carousel-item:hover {
+  transform: scale(1.02);
+  border-color: var(--indigo);
+}
+
+.carousel-item img {
   height: 100%;
+  width: auto;
   object-fit: cover;
   display: block;
 }
 
-.portfolio-content {
-  padding: 32px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+@keyframes scroll-carousel {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-50% - 12px));
+  }
+
+  /* -50% because we duplicated the items */
+}
+
+/* Tablet Adjustments */
+@media (max-width: 1024px) {
+  .carousel-item {
+    height: 320px;
+  }
+
+  .carousel-track {
+    animation-duration: 80s;
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 767px) {
+  .carousel-item {
+    height: 260px;
+  }
+
+  .carousel-track {
+    animation-play-state: running !important;
+  }
+
+  /* Keep moving on mobile touch */
 }
 
 /* Lightbox Modal */
@@ -627,8 +662,7 @@ footer {
     width: 100%;
   }
 
-  .grid-3,
-  .portfolio-grid {
+  .grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
 
