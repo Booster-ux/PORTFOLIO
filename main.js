@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 // Initialize Smooth Scroll (Lenis)
 const lenis = new Lenis({
   lerp: 0.1,
-  duration: 1.2,
+  duration: 1.4,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 });
 
@@ -17,27 +17,40 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-// Page Entrance & Scroll Animations (Linear style)
+// Page Loader & Entrance Sequences
 window.addEventListener('load', () => {
-  // Reveal animations on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  reveals.forEach((el, index) => {
-    gsap.to(el, {
-      opacity: 1,
-      y: 0,
-      duration: 1.2,
-      ease: 'expo.out',
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 90%',
-      },
-      delay: 0.05
-    });
+  const tl = gsap.timeline();
+
+  tl.to('#page-loader', {
+    opacity: 0,
+    duration: 0.8,
+    ease: 'power2.inOut',
+    onComplete: () => document.getElementById('page-loader').style.display = 'none'
+  })
+    .from('.hero-badge', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.2')
+    .from('.hero-title', { y: 40, opacity: 0, duration: 1.2, ease: 'expo.out' }, '-=0.8')
+    .from('.hero-subtitle', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.8')
+    .from('.hero-actions', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.8')
+    .from('#hero-mascot', {
+      scale: 0.9,
+      opacity: 0,
+      duration: 2,
+      ease: 'power2.out',
+      filter: 'blur(20px)'
+    }, '-=1.5');
+
+  // Subtle drifting animation for the mascot
+  gsap.to('#hero-mascot', {
+    y: 20,
+    duration: 4,
+    repeat: -1,
+    yoyo: true,
+    ease: 'power1.inOut'
   });
 
-  // Navigation highlight
+  // Handle Nav Scroll Effect
+  const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => {
-    const nav = document.getElementById('main-nav');
     if (window.scrollY > 50) {
       nav.classList.add('scrolled');
     } else {
@@ -45,24 +58,31 @@ window.addEventListener('load', () => {
     }
   });
 
-  // Hero special stagger
-  gsap.from('#hero .reveal', {
-    opacity: 0,
-    y: 40,
-    duration: 1.5,
-    stagger: 0.15,
-    ease: 'expo.out'
+  // Reveal on Scroll Animations (Standardized for all .reveal elements)
+  const reveals = document.querySelectorAll('.reveal');
+  reveals.forEach(el => {
+    gsap.to(el, {
+      opacity: 1,
+      y: 0,
+      duration: 1.4,
+      ease: 'expo.out',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 92%',
+        toggleActions: 'play none none none'
+      }
+    });
   });
-});
 
-// Horizontal Parallax for hero background (Subtle)
-gsap.to('#hero', {
-  backgroundPositionY: '20%',
-  ease: 'none',
-  scrollTrigger: {
-    trigger: '#hero',
-    start: 'top top',
-    end: 'bottom top',
-    scrub: true
-  }
+  // Subtle Parallax for hero background image
+  gsap.to('.city-bg', {
+    yPercent: 15,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '#hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
 });

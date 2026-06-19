@@ -4,110 +4,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameOnAI | Professional Roblox Development Studio</title>
+    <title>GameOnAI | Building Roblox Games That Players Remember</title>
     <meta name="description"
-        content="Building professional Roblox experiences from concept to launch. We handle full game production, systems, and design.">
+        content="Professional Roblox game development studio specialized in full production, systems, and cinematic design.">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+    <div id="page-loader" class="page-load-cover">
+        <h2 class="gradient-text" style="font-size: 1.5rem; letter-spacing: 5px;">GAMEONAI</h2>
+    </div>
+
     <nav id="main-nav">
         <div class="container nav-inner">
-            <a href="#" class="nav-link logo-link">GAMEONAI</a>
-            <a href="#services" class="nav-link">Services</a>
-            <a href="#portfolio" class="nav-link">Projects</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#" class="logo-link">GAMEONAI</a>
+            <div class="nav-links-centered">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#portfolio" class="nav-link">Showcase</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <a href="#contact" class="btn-primary" style="padding: 10px 24px; font-size: 0.8rem;">Hire Us</a>
         </div>
     </nav>
 
     <main id="app">
-        <!-- Hero Section -->
+        <!-- Centered Hero Section -->
         <section id="hero">
-            <div class="container">
-                <span class="hero-tag reveal">Premier Roblox Production Team</span>
-                <h1 class="hero-title reveal">ROBLOX FULL GAME <br><span class="gradient-text">DEVELOPMENT STUDIO</span>
-                </h1>
-                <p class="hero-subtitle reveal">We build market-leading Roblox experiences with cinematic visuals and
-                    high-performance systems. From concept to global launch.</p>
-                <div class="reveal">
-                    <a href="#contact" class="btn-primary">Start a Project</a>
+            <div class="hero-bg-media">
+                <img src="./assets/roblox_futuristic_city_bg.png" alt="Cityscape" class="city-bg">
+                <div class="hero-glow-overlay"></div>
+            </div>
+
+            <div class="hero-character-center">
+                <img src="./assets/hero_aaa.png" alt="Mascot" id="hero-mascot">
+            </div>
+
+            <div class="container hero-content-centered">
+                <div class="hero-badge reveal">ROBLOX DEVELOPMENT STUDIO</div>
+                <h1 class="hero-title reveal">Building Roblox Games <br>That <span class="gradient-text">Players
+                        Remember</span></h1>
+                <p class="hero-subtitle reveal">Full Game Development, Systems, Animation, Environments, <br>UI/UX, VFX
+                    & Custom Assets.</p>
+                <div class="hero-actions reveal">
+                    <a href="#portfolio" class="btn-primary">View Portfolio</a>
+                    <a href="#contact" class="btn-secondary">Start Your Project</a>
                 </div>
             </div>
         </section>
 
-        <!-- Identity / Genres -->
-        <section class="section" style="padding: var(--section-spacing) 0; border-top: 1px solid var(--glass-border);">
+        <!-- Services Section -->
+        <section id="services" class="section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="hero-tag">Capabilities</span>
-                    <h2>CRAFTING <span class="gradient-text">ANY EXPERIENCE</span></h2>
-                    <p>Whether it's a massive open-world RPG or a fast-paced simulator, we handle the entire technical
-                        and creative pipeline.</p>
-                </div>
-                <div class="genre-container reveal">
-                    <span class="genre-tag">RPG Games</span>
-                    <span class="genre-tag">Simulators</span>
-                    <span class="genre-tag">Tycoons</span>
-                    <span class="genre-tag">Combat Systems</span>
-                    <span class="genre-tag">Open World</span>
-                    <span class="genre-tag">PvP Experiences</span>
-                    <span class="genre-tag">Obby & Platformers</span>
-                    <span class="genre-tag">Economy Systems</span>
-                    <span class="genre-tag">Inventory Systems</span>
-                    <span class="genre-tag">Data Persistence</span>
-                    <span class="genre-tag">Quest Systems</span>
-                    <span class="genre-tag">Custom VFX</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Grid -->
-        <section id="services" style="padding-bottom: var(--section-spacing);">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="hero-tag">Our Expertise</span>
-                    <h2>PROFESSIONAL <span class="gradient-text">STUDIO SERVICES</span></h2>
+                    <span class="hero-tag">OUR SERVICES</span>
+                    <h2>CRAFTING <span class="gradient-text">NEXT-GEN</span> EXPERIENCES</h2>
                 </div>
 
                 <div class="services-grid">
                     <div class="service-card reveal" onclick="location.href='./services/game-dev.html'">
-                        <h3>Full Game Development</h3>
-                        <p>Complete end-to-end production including mechanics, environments, and monetization.</p>
+                        <div class="service-icon">🎮</div>
+                        <h3>Full Game<br>Development</h3>
+                        <p>Complete end-to-end production with market-ready polish.</p>
                     </div>
                     <div class="service-card reveal" onclick="location.href='./services/systems.html'">
-                        <h3>Systems Development</h3>
-                        <p>High-performance backend modules, matchmaking, and data architecture.</p>
+                        <div class="service-icon">⚙️</div>
+                        <h3>Systems<br>Development</h3>
+                        <p>High-performance backend logic and multiplayer systems.</p>
                     </div>
                     <div class="service-card reveal" onclick="location.href='./services/animation.html'">
-                        <h3>Roblox Animation</h3>
-                        <p>Fluid character combat, run cycles, and cinematic cutscenes.</p>
+                        <div class="service-icon">⚔️</div>
+                        <h3>Studio<br>Animation</h3>
+                        <p>Fluid character combat and cinematic motion design.</p>
                     </div>
                     <div class="service-card reveal" onclick="location.href='./services/map-design.html'">
-                        <h3>Environment Design</h3>
-                        <p>Immersive worlds with cinematic lighting and custom asset building.</p>
+                        <div class="service-icon">🌍</div>
+                        <h3>Map &<br>Environment</h3>
+                        <p>Breathtaking worlds built with cinematic atmospheric design.</p>
                     </div>
                     <div class="service-card reveal" onclick="location.href='./services/vfx.html'">
-                        <h3>UI/UX + GFX + VFX</h3>
-                        <p>Modern HUDs, promotional branding, and physics-based particles.</p>
+                        <div class="service-icon">✨</div>
+                        <h3>UI/UX, GFX<br>& VFX</h3>
+                        <p>Modern interfaces and gorgeous particle effects.</p>
                     </div>
                     <div class="service-card reveal" onclick="location.href='./services/assets.html'">
-                        <h3>Custom Game Assets</h3>
-                        <p>Optimized 3D models, weapons, and vehicles tailored for Roblox.</p>
+                        <div class="service-icon">📦</div>
+                        <h3>Custom Game<br>Assets</h3>
+                        <p>Optimized 3D models and tailored production assets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why GameOnAI -->
+        <section id="why" class="section" style="background: #020202; border-top: 1px solid var(--glass-border);">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>WHY CHOOSE <span class="gradient-text">GAMEONAI</span></h2>
+                </div>
+                <div class="why-grid">
+                    <div class="why-item reveal">
+                        <div class="why-dot"></div>
+                        <p>End-to-End Roblox Development</p>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="why-dot"></div>
+                        <p>Custom Systems & Gameplay</p>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="why-dot"></div>
+                        <p>High Quality Environments</p>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="why-dot"></div>
+                        <p>Optimized Performance</p>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="why-dot"></div>
+                        <p>Professional Visual Design</p>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="why-dot"></div>
+                        <p>Reliable Communication</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Portfolio Showcase -->
-        <section id="portfolio" style="padding: var(--section-spacing) 0; background: #020202;">
+        <section id="portfolio" class="section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="hero-tag">Portfolio</span>
                     <h2>STUDIO <span class="gradient-text">SHOWCASE</span></h2>
+                    <p>Experience the quality of our recent Roblox productions.</p>
                 </div>
-
                 <div class="portfolio-masonry reveal">
-                    <!-- Dynamic placeholders -->
                     <div class="masonry-item"><img
                             src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800"
                             alt="Work 1"></div>
@@ -117,79 +148,53 @@
                     <div class="masonry-item"><img
                             src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800"
                             alt="Work 3"></div>
-                    <div class="masonry-item"><img
-                            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
-                            alt="Work 4"></div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" style="padding: var(--section-spacing) 0;">
+        <section id="contact" class="section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="hero-tag">Get in Touch</span>
                     <h2>READY TO BUILD YOUR <br><span class="gradient-text">NEXT ROBLOX EXPERIENCE?</span></h2>
-                    <p>Partner with a professional studio for your next big title. Fill out the form below or reach out
-                        via Discord.</p>
                 </div>
 
-                <div class="contact-form reveal glass"
-                    style="padding: 48px; border-radius: 24px; border: 1px solid var(--glass-border);">
-                    <form action="#">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" placeholder="Your name">
-                            </div>
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <input type="email" placeholder="gracegameonai@gmail.com">
-                            </div>
+                <div class="contact-card reveal">
+                    <div class="contact-info">
+                        <div class="contact-method">
+                            <span class="method-label">Discord</span>
+                            <span class="method-value">gameonai</span>
                         </div>
-                        <div class="form-group">
-                            <label>Project Type</label>
-                            <select>
-                                <option>Full Game Development</option>
-                                <option>Systems & Scripting</option>
-                                <option>Map & Environment</option>
-                                <option>Animation & VFX</option>
-                            </select>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-                            <div class="form-group">
-                                <label>Estimated Budget ($)</label>
-                                <input type="text" placeholder="e.g. 5,000+">
-                            </div>
-                            <div class="form-group">
-                                <label>Expected Timeline</label>
-                                <input type="text" placeholder="e.g. 2 months">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Project Details</label>
-                            <textarea rows="5" placeholder="Tell us about your game idea..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary"
-                            style="width: 100%; border: none; cursor: pointer;">Send Proposal</button>
-                    </form>
-
-                    <div
-                        style="margin-top: 48px; border-top: 1px solid var(--glass-border); padding-top: 32px; text-align: center;">
-                        <p style="color: var(--text-secondary);">Direct Contact</p>
-                        <div style="display: flex; justify-content: center; gap: 32px; margin-top: 16px;">
-                            <div><span style="color: var(--indigo);">Discord:</span> gameonai</div>
-                            <div><span style="color: var(--indigo);">Email:</span> gracegameonai@gmail.com</div>
+                        <div class="contact-method">
+                            <span class="method-label">Email</span>
+                            <span class="method-value">gracegameonai@gmail.com</span>
                         </div>
                     </div>
+                    <form class="contact-form-premium">
+                        <div class="form-row">
+                            <input type="text" placeholder="Your Name">
+                            <input type="email" placeholder="Email Address">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" placeholder="Project Budget (USD)">
+                            <select>
+                                <option>Project Type</option>
+                                <option>Full Game</option>
+                                <option>Systems</option>
+                                <option>Assets</option>
+                            </select>
+                        </div>
+                        <textarea rows="4" placeholder="How can we help?"></textarea>
+                        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Send
+                            Proposal</button>
+                    </form>
                 </div>
             </div>
         </section>
 
-        <footer style="padding: 64px 0; border-top: 1px solid var(--glass-border); text-align: center;">
-            <div class="container">
-                <p style="color: var(--text-muted);">&copy; 2026 GAMEONAI STUDIO. BUILT FOR THE FUTURE OF ROBLOX.</p>
-            </div>
+        <footer style="padding: 100px 0 60px; text-align: center; border-top: 1px solid var(--glass-border);">
+            <p style="color: var(--text-muted); font-size: 0.8rem; letter-spacing: 2px;">&copy; 2026 GAMEONAI STUDIO.
+                ALL RIGHTS RESERVED.</p>
         </footer>
     </main>
 
