@@ -99,9 +99,10 @@ window.addEventListener('load', () => {
   gsap.to('.grid-item', {
     opacity: 1,
     y: 0,
-    duration: 1,
+    scale: 1,
+    duration: 1.2,
     stagger: {
-      each: 0.05,
+      each: 0.04,
       grid: 'auto',
       from: 'start'
     },
