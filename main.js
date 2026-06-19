@@ -31,22 +31,33 @@ window.addEventListener('load', () => {
     .from('.hero-title', { y: 40, opacity: 0, duration: 1.2, ease: 'expo.out' }, '-=0.8')
     .from('.hero-subtitle', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.8')
     .from('.hero-actions', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.8')
-    .from('#hero-mascot', {
-      scale: 0.9,
+    .from('#hero-main-visual', {
+      scale: 1.2,
       opacity: 0,
-      duration: 2,
-      ease: 'power2.out',
-      filter: 'blur(20px)'
-    }, '-=1.5');
+      duration: 2.5,
+      ease: 'expo.out',
+      filter: 'blur(30px) brightness(0)'
+    }, '-=1.8');
 
-  // Subtle drifting animation for the mascot
-  gsap.to('#hero-mascot', {
-    y: 20,
-    duration: 4,
-    repeat: -1,
-    yoyo: true,
-    ease: 'power1.inOut'
-  });
+  // Mouse Parallax for Hero Main Visual
+  const heroSection = document.querySelector('#hero');
+  const heroVisual = document.querySelector('#hero-main-visual');
+
+  if (heroSection && heroVisual) {
+    heroSection.addEventListener('mousemove', (e) => {
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
+      const xPercent = (clientX / innerWidth - 0.5) * 2;
+      const yPercent = (clientY / innerHeight - 0.5) * 2;
+
+      gsap.to(heroVisual, {
+        x: xPercent * 15,
+        y: yPercent * 15,
+        duration: 1.5,
+        ease: 'power2.out'
+      });
+    });
+  }
 
   // Handle Nav Scroll Effect
   const nav = document.getElementById('main-nav');
@@ -58,7 +69,7 @@ window.addEventListener('load', () => {
     }
   });
 
-  // Reveal on Scroll Animations (Standardized for all .reveal elements)
+  // Reveal on Scroll Animations
   const reveals = document.querySelectorAll('.reveal');
   reveals.forEach(el => {
     gsap.to(el, {
@@ -74,9 +85,10 @@ window.addEventListener('load', () => {
     });
   });
 
-  // Subtle Parallax for hero background image
-  gsap.to('.city-bg', {
-    yPercent: 15,
+  // Scroll-based depth effect
+  gsap.to('#hero-main-visual', {
+    scale: 1.2,
+    y: 100,
     ease: 'none',
     scrollTrigger: {
       trigger: '#hero',
