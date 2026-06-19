@@ -4,7 +4,7 @@ import Lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Initialize Smooth Scroll (Lenis)
+// Initialize Smooth Scroll
 const lenis = new Lenis({
   lerp: 0.1,
   duration: 1.4,
@@ -17,34 +17,39 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-// Page Loader & Entrance Sequences
+// Global Entrance & Performance Orchestration
 window.addEventListener('load', () => {
   const tl = gsap.timeline();
 
+  // Loader sequence
   tl.to('#page-loader', {
     opacity: 0,
-    duration: 0.8,
-    ease: 'power2.inOut',
+    duration: 1,
+    ease: 'expo.inOut',
     onComplete: () => {
       document.getElementById('page-loader').style.display = 'none';
     }
-  })
-    .from('.hero-badge', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.2')
-    .from('.hero-title', { y: 40, opacity: 0, duration: 1.2, ease: 'expo.out' }, '-=0.8')
-    .from('.hero-subtitle', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.8')
-    .from('.hero-actions', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.8')
-    .from('.hero-visual-side', {
-      x: 40,
-      opacity: 0,
-      duration: 2,
-      ease: 'power4.out'
-    }, '-=1.2');
+  });
 
-  // Background Glow Orb Animations (Linear-style)
+  // Hero Split Entrance (Linear Style)
+  tl.from('.hero-badge', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.4')
+    .from('h1', { y: 40, opacity: 0, duration: 1.2, ease: 'expo.out' }, '-=0.8')
+    .from('.hero-subtitle', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.9')
+    .from('.hero-actions', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.8')
+    .from('.hero-trust', { y: 20, opacity: 0, duration: 1, ease: 'expo.out' }, '-=0.8')
+    .from('.hero-visual', {
+      x: 60,
+      opacity: 0,
+      scale: 0.95,
+      duration: 1.8,
+      ease: 'expo.out'
+    }, '-=1.4');
+
+  // Living Background: Orb Drift
   gsap.to('.orb-1', {
     x: '20%',
-    y: '10%',
-    duration: 12,
+    y: '15%',
+    duration: 15,
     repeat: -1,
     yoyo: true,
     ease: 'sine.inOut'
@@ -52,56 +57,64 @@ window.addEventListener('load', () => {
 
   gsap.to('.orb-2', {
     x: '-10%',
-    y: '-15%',
-    duration: 10,
+    y: '-20%',
+    duration: 12,
     repeat: -1,
     yoyo: true,
     ease: 'sine.inOut'
   });
 
-  // Subtitling character floating
-  gsap.to('#hero-main-visual', {
-    y: -15,
+  gsap.to('.orb-3', {
+    x: '15%',
+    y: '25%',
+    duration: 18,
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut'
+  });
+
+  // Mascot Breathing & Subtle Mouse Parallax
+  gsap.to('#mascot-main', {
+    y: -20,
     duration: 4,
     repeat: -1,
     yoyo: true,
     ease: 'sine.inOut'
   });
 
-  // Mouse Parallax for Visual Side
-  const heroVisualSide = document.querySelector('.hero-visual-side');
-  if (heroVisualSide) {
+  const heroVisual = document.querySelector('.hero-visual');
+  if (heroVisual) {
     window.addEventListener('mousemove', (e) => {
       const { clientX, clientY } = e;
-      const xPos = (clientX / window.innerWidth - 0.5) * 30;
-      const yPos = (clientY / window.innerHeight - 0.5) * 30;
+      const xPos = (clientX / window.innerWidth - 0.5) * 40;
+      const yPos = (clientY / window.innerHeight - 0.5) * 40;
 
-      gsap.to('#hero-main-visual', {
+      gsap.to('#mascot-main', {
         x: xPos,
-        y: yPos - 15, // keep floating offset
+        y: yPos - 20, // offset for breathing
         duration: 2,
         ease: 'power2.out'
       });
     });
   }
 
-  // Scroll Revelations
+  // Unified Scroll Revelation Flow
   const reveals = document.querySelectorAll('.reveal');
   reveals.forEach(el => {
-    gsap.to(el, {
+    gsap.fadeReveal = gsap.to(el, {
       opacity: 1,
       y: 0,
-      duration: 1.2,
+      duration: 1.4,
       ease: 'expo.out',
       scrollTrigger: {
         trigger: el,
-        start: 'top 92%',
+        start: 'top 90%',
         toggleActions: 'play none none none'
       }
     });
   });
 
-  // Subtle Nav Scroll
+  // Navigation Logic
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -111,14 +124,14 @@ window.addEventListener('load', () => {
     }
   });
 
-  // Parallax effect on Section Scroll
-  gsap.to('.hero-city-bg', {
-    yPercent: 20,
+  // Global Parallax depth for background city (if users re-add it) or orbs
+  gsap.to('.bg-scene', {
+    yPercent: -15,
     ease: 'none',
     scrollTrigger: {
-      trigger: '.hero-split',
+      trigger: 'body',
       start: 'top top',
-      end: 'bottom top',
+      end: 'bottom bottom',
       scrub: true
     }
   });

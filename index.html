@@ -4,60 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameOnAI | Building Roblox Games That Players Remember</title>
+    <title>GameOnAI | Premium Roblox Game Development Studio</title>
     <meta name="description"
-        content="Professional Roblox game development studio specialized in full production, systems, and cinematic design.">
+        content="End-to-end Roblox productions, high-performance systems, and cinematic world design.">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+    <!-- Living Background Layer -->
+    <div class="bg-scene">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
     <div id="page-loader" class="page-load-cover">
         <h2 class="gradient-text" style="font-size: 1.5rem; letter-spacing: 5px;">GAMEONAI</h2>
     </div>
 
+    <!-- Navigation -->
     <nav id="main-nav">
         <div class="container nav-inner">
-            <a href="#" class="logo-link">GAMEONAI</a>
-            <div class="nav-links-centered">
+            <a href="#" class="logo">GAMEONAI</a>
+            <div class="nav-links">
                 <a href="#" class="nav-link">Home</a>
                 <a href="#services" class="nav-link">Services</a>
-                <a href="#portfolio" class="nav-link">Showcase</a>
+                <a href="#portfolio" class="nav-link">Work</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <a href="#contact" class="btn-primary" style="padding: 10px 24px; font-size: 0.8rem;">Hire Us</a>
+            <a href="#contact" class="btn btn-solid" style="padding: 10px 24px; font-size: 0.8rem;">Hire Us</a>
         </div>
     </nav>
 
     <main id="app">
-        <!-- Split Hero Section -->
-        <section id="hero" class="hero-split">
-            <!-- Animated Background Layers -->
-            <div class="hero-bg-container">
-                <div class="hero-city-bg"></div>
-                <div class="hero-glow-orb orb-1"></div>
-                <div class="hero-glow-orb orb-2"></div>
-                <div class="hero-fog-layer"></div>
-                <div class="hero-overlay"></div>
-            </div>
-
-            <div class="container hero-split-inner">
-                <!-- Left Side: Content -->
-                <div class="hero-content-side">
-                    <div class="hero-badge reveal">ROBLOX DEVELOPMENT STUDIO</div>
-                    <h1 class="hero-title reveal">Building Roblox Games <br>That <span class="gradient-text">Players
-                            Remember</span></h1>
-                    <p class="hero-subtitle reveal">Full Game Development, Systems, Animation, Environments, <br>UI/UX,
-                        VFX & Custom Assets.</p>
-                    <div class="hero-actions reveal">
-                        <a href="#portfolio" class="btn-primary">View Portfolio</a>
-                        <a href="#contact" class="btn-secondary">Start Your Project</a>
+        <!-- Hero Section -->
+        <section id="hero" class="section">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="hero-badge reveal">ROBLOX DEVELOPMENT STUDIO</div>
+                        <h1 class="reveal"><span class="gradient-text">Building Games</span> <br>That Players Remember
+                        </h1>
+                        <p class="hero-subtitle reveal">Full Production, Advanced Systems, Professional Animation, and
+                            Immersive Environments.</p>
+                        <div class="hero-actions reveal">
+                            <a href="#portfolio" class="btn btn-solid">View Portfolio</a>
+                            <a href="#contact" class="btn btn-outline">Start Your Project</a>
+                        </div>
+                        <div class="hero-trust reveal">
+                            <div class="trust-item">
+                                <span class="trust-stat">5+</span>
+                                <span class="trust-label">Years Exp</span>
+                            </div>
+                            <div class="trust-item">
+                                <span class="trust-stat">50M+</span>
+                                <span class="trust-label">Total Plays</span>
+                            </div>
+                            <div class="trust-item">
+                                <span class="trust-stat">100%</span>
+                                <span class="trust-label">Success Rate</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Right Side: Visual -->
-                <div class="hero-visual-side">
-                    <div class="avatar-container reveal">
-                        <img src="./assets/hero_final.jpg" alt="GameOnAI Mascot" id="hero-main-visual">
+                    <div class="hero-visual reveal">
+                        <img src="./assets/hero_final.jpg" alt="Head-to-toe Mascot" id="mascot-main">
                     </div>
                 </div>
             </div>
@@ -67,98 +77,101 @@
         <section id="services" class="section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="hero-tag">OUR SERVICES</span>
-                    <h2>CRAFTING <span class="gradient-text">NEXT-GEN</span> EXPERIENCES</h2>
+                    <span class="tagline">Expertise</span>
+                    <h2>ROBLOX <span class="gradient-text">PRODUCTION</span> SERVICES</h2>
+                    <p>From core systems to global launch, we handle every stage of development.</p>
                 </div>
 
-                <div class="services-grid">
-                    <!-- ... identical services content ... -->
-                    <div class="service-card reveal" onclick="location.href='./services/game-dev.html'">
+                <div class="grid-3">
+                    <div class="service-card reveal">
                         <div class="service-icon">🎮</div>
-                        <h3>Full Game<br>Development</h3>
-                        <p>Complete end-to-end production with market-ready polish.</p>
+                        <h3>Full Production</h3>
+                        <p>Complete end-to-end studio management for new Roblox titles.</p>
                     </div>
-                    <div class="service-card reveal" onclick="location.href='./services/systems.html'">
+                    <div class="service-card reveal">
                         <div class="service-icon">⚙️</div>
-                        <h3>Systems<br>Development</h3>
-                        <p>High-performance backend logic and multiplayer systems.</p>
+                        <h3>Systems Architecture</h3>
+                        <p>Robust backend logic, secure data saving, and multiplayer systems.</p>
                     </div>
-                    <div class="service-card reveal" onclick="location.href='./services/animation.html'">
+                    <div class="service-card reveal">
                         <div class="service-icon">⚔️</div>
-                        <h3>Studio<br>Animation</h3>
-                        <p>Fluid character combat and cinematic motion design.</p>
+                        <h3>Advanced Animation</h3>
+                        <p>Fluid combatMoves, cinematic sequences, and NPC locomotion.</p>
                     </div>
-                    <div class="service-card reveal" onclick="location.href='./services/map-design.html'">
-                        <div class="service-icon">🌍</div>
-                        <h3>Map &<br>Environment</h3>
-                        <p>Breathtaking worlds built with cinematic atmospheric design.</p>
+                    <div class="service-card reveal">
+                        <div class="service-icon">🌎</div>
+                        <h3>World Building</h3>
+                        <p>Atmospheric maps, custom terrain, and high-end lighting design.</p>
                     </div>
-                    <div class="service-card reveal" onclick="location.href='./services/vfx.html'">
+                    <div class="service-card reveal">
                         <div class="service-icon">✨</div>
-                        <h3>UI/UX, GFX<br>& VFX</h3>
-                        <p>Modern interfaces and gorgeous particle effects.</p>
+                        <h3>UI/UX & VFX</h3>
+                        <p>Modern game interfaces and stunning custom particle systems.</p>
                     </div>
-                    <div class="service-card reveal" onclick="location.href='./services/assets.html'">
+                    <div class="service-card reveal">
                         <div class="service-icon">📦</div>
-                        <h3>Custom Game<br>Assets</h3>
-                        <p>Optimized 3D models and tailored production assets.</p>
+                        <h3>Custom Assets</h3>
+                        <p>Optimized 3D models and tailored production assets for Roblox.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Why GameOnAI -->
-        <section id="why" class="section" style="background: #020202; border-top: 1px solid var(--glass-border);">
+        <!-- Why GameOnAI Section -->
+        <section id="why" class="section">
             <div class="container">
-                <div class="section-header reveal">
-                    <h2>WHY CHOOSE <span class="gradient-text">GAMEONAI</span></h2>
-                </div>
-                <div class="why-grid">
-                    <div class="why-item reveal">
-                        <div class="why-dot"></div>
-                        <p>End-to-End Roblox Development</p>
+                <div class="grid-2">
+                    <div class="reveal">
+                        <span class="tagline">The Difference</span>
+                        <h2>WHY CHOOSE <span class="gradient-text">GAMEONAI STUDIO</span></h2>
+                        <p style="margin-top: 24px;">We combine technical excellence with artistic vision to create
+                            Roblox experiences that stand out in a crowded market.</p>
                     </div>
-                    <div class="why-item reveal">
-                        <div class="why-dot"></div>
-                        <p>Custom Systems & Gameplay</p>
-                    </div>
-                    <div class="why-item reveal">
-                        <div class="why-dot"></div>
-                        <p>High Quality Environments</p>
-                    </div>
-                    <div class="why-item reveal">
-                        <div class="why-dot"></div>
-                        <p>Optimized Performance</p>
-                    </div>
-                    <div class="why-item reveal">
-                        <div class="why-dot"></div>
-                        <p>Professional Visual Design</p>
-                    </div>
-                    <div class="why-item reveal">
-                        <div class="why-dot"></div>
-                        <p>Reliable Communication</p>
+                    <div class="why-features">
+                        <div class="feature-box reveal">
+                            <h3>High Performance</h3>
+                            <p>Optimized for all devices, ensuring maximum accessibility.</p>
+                        </div>
+                        <div class="feature-box reveal">
+                            <h3>Scalable Systems</h3>
+                            <p>Built to handle thousands of concurrent players with ease.</p>
+                        </div>
+                        <div class="feature-box reveal">
+                            <h3>Artist Led</h3>
+                            <p>Every pixel and animation is polished to studio standards.</p>
+                        </div>
+                        <div class="feature-box reveal">
+                            <h3>Reliable Partner</h3>
+                            <p>Clear communication and strict deadline adherence.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Portfolio Showcase -->
+        <!-- Showcase Section -->
         <section id="portfolio" class="section">
             <div class="container">
-                <div class="section-header reveal">
+                <div class="section-header reveal centered">
+                    <span class="tagline">Recent Work</span>
                     <h2>STUDIO <span class="gradient-text">SHOWCASE</span></h2>
-                    <p>Experience the quality of our recent Roblox productions.</p>
                 </div>
-                <div class="portfolio-masonry reveal">
+                <div class="masonry reveal">
                     <div class="masonry-item"><img
                             src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800"
                             alt="Work 1"></div>
-                    <div class="masonry-item"><img
-                            src="https://images.unsplash.com/photo-1614728263952-84ea206f99b6?auto=format&fit=crop&q=80&w=800"
-                            alt="Work 2"></div>
+                    <div class="masonry-item">
+                        <video loop muted autoplay
+                            poster="https://images.unsplash.com/photo-1614728263952-84ea206f99b6?auto=format&fit=crop&q=80&w=800">
+                            <src src="" type="video/mp4">
+                        </video>
+                    </div>
                     <div class="masonry-item"><img
                             src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800"
                             alt="Work 3"></div>
+                    <div class="masonry-item"><img
+                            src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80&w=800"
+                            alt="Work 4"></div>
                 </div>
             </div>
         </section>
@@ -166,40 +179,42 @@
         <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="container">
-                <div class="section-header reveal">
-                    <h2>READY TO BUILD YOUR <br><span class="gradient-text">NEXT ROBLOX EXPERIENCE?</span></h2>
-                </div>
-
-                <div class="contact-card reveal">
+                <div class="contact-grid reveal">
                     <div class="contact-info">
-                        <div class="contact-method"><span class="method-label">Discord</span><span
-                                class="method-value">gameonai</span></div>
-                        <div class="contact-method"><span class="method-label">Email</span><span
-                                class="method-value">gracegameonai@gmail.com</span></div>
-                    </div>
-                    <form class="contact-form-premium">
-                        <div class="form-row"><input type="text" placeholder="Your Name"><input type="email"
-                                placeholder="Email Address"></div>
-                        <div class="form-row">
-                            <input type="text" placeholder="Project Budget (USD)">
-                            <select>
-                                <option>Project Type</option>
-                                <option>Full Game</option>
-                                <option>Systems</option>
-                                <option>Assets</option>
-                            </select>
+                        <h2>LET'S <span class="gradient-text">BUILD </span> SOMETHING GREAT</h2>
+                        <p style="margin: 32px 0;">Have a project in mind? Let's discuss your vision and how we can
+                            bring it to life on Roblox.</p>
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <div class="trust-item">
+                                <span class="trust-label">Discord</span>
+                                <span class="trust-stat" style="font-size: 1.2rem;">gameonai</span>
+                            </div>
+                            <div class="trust-item">
+                                <span class="trust-label">Email</span>
+                                <span class="trust-stat" style="font-size: 1.2rem;">gracegameonai@gmail.com</span>
+                            </div>
                         </div>
-                        <textarea rows="4" placeholder="How can we help?"></textarea>
-                        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Send
-                            Proposal</button>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <input type="text" class="form-input" placeholder="Name">
+                            <input type="email" class="form-input" placeholder="Email">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" class="form-input" placeholder="Budget (USD)">
+                            <input type="text" class="form-input" placeholder="Timeline">
+                        </div>
+                        <textarea class="form-input" rows="5" placeholder="Project Description"></textarea>
+                        <button type="submit" class="btn btn-solid" style="width: 100%;">Send Proposal</button>
                     </form>
                 </div>
             </div>
         </section>
 
-        <footer style="padding: 100px 0 60px; text-align: center; border-top: 1px solid var(--glass-border);">
-            <p style="color: var(--text-muted); font-size: 0.8rem; letter-spacing: 2px;">&copy; 2026 GAMEONAI STUDIO.
-                ALL RIGHTS RESERVED.</p>
+        <footer>
+            <div class="container">
+                <p>&copy; 2026 GAMEONAI STUDIO. ALL RIGHTS RESERVED.</p>
+            </div>
         </footer>
     </main>
 
