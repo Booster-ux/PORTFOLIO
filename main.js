@@ -5,7 +5,7 @@ import Lenis from 'lenis';
 gsap.registerPlugin(ScrollTrigger);
 
 // Initialize Smooth Scroll
-const lenis = new Lenis({
+let lenis = new Lenis({
   lerp: 0.1,
   duration: 1.4,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -17,11 +17,11 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-// Animation Orchestration
+// Global Entrance & Interaction Logic
 window.addEventListener('load', () => {
   const tlEntrance = gsap.timeline();
 
-  // Page Loader transition
+  // Loader sequence
   tlEntrance.to('#page-loader', {
     opacity: 0,
     duration: 1,
@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
     }
   });
 
-  // Hero Section Entrance - Settles permanently
+  // Hero Section Entrance
   tlEntrance.to('.hero-entrance', {
     opacity: 1,
     y: 0,
@@ -57,7 +57,7 @@ window.addEventListener('load', () => {
 
   // Mascot: Breathing Motion
   gsap.to('#mascot-main', {
-    y: -15,
+    y: -20,
     duration: 4,
     repeat: -1,
     yoyo: true,
@@ -66,33 +66,60 @@ window.addEventListener('load', () => {
 
   // Mouse Parallax for Hero Visual
   const heroVisual = document.querySelector('.hero-visual');
-  if (heroVisual) {
+  if (heroVisual && window.innerWidth > 1024) {
     window.addEventListener('mousemove', (e) => {
       const { clientX, clientY } = e;
-      const xMoved = (clientX / window.innerWidth - 0.5) * 30;
-      const yMoved = (clientY / window.innerHeight - 0.5) * 30;
+      const xMoved = (clientX / window.innerWidth - 0.5) * 40;
+      const yMoved = (clientY / window.innerHeight - 0.5) * 40;
 
       gsap.to('#mascot-main', {
         x: xMoved,
-        y: yMoved - 15,
+        y: yMoved - 20,
         duration: 2,
         ease: 'power2.out'
       });
     });
   }
 
-  // Scroll Reveal (Filtered to ignore hero elements)
+  // Unified Scroll Revelation Flow
   const reveals = document.querySelectorAll('.reveal');
   reveals.forEach(el => {
     gsap.to(el, {
       opacity: 1,
       y: 0,
-      duration: 1.2,
+      duration: 1.4,
       ease: 'expo.out',
       scrollTrigger: {
         trigger: el,
         start: 'top 92%',
         toggleActions: 'play none none none'
+      }
+    });
+  });
+
+  // Navigation: Hamburger Toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function toggleMenu() {
+    menuToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+
+    // Toggle scroll lock
+    if (navMenu.classList.contains('active')) {
+      lenis.stop();
+    } else {
+      lenis.start();
+    }
+  }
+
+  menuToggle.addEventListener('click', toggleMenu);
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navMenu.classList.contains('active')) {
+        toggleMenu();
       }
     });
   });
@@ -107,7 +134,7 @@ window.addEventListener('load', () => {
     }
   });
 
-  // Global Scroll Parallax depth for background scene
+  // Global Parallax depth for background scene
   gsap.to('.bg-scene', {
     yPercent: -10,
     ease: 'none',
