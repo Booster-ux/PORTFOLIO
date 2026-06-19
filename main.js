@@ -51,8 +51,8 @@ window.addEventListener('load', () => {
       const yPercent = (clientY / innerHeight - 0.5) * 2;
 
       gsap.to(heroVisual, {
-        x: xPercent * 15,
-        y: yPercent * 15,
+        x: xPercent * 8,
+        y: yPercent * 8,
         duration: 1.5,
         ease: 'power2.out'
       });
@@ -87,8 +87,8 @@ window.addEventListener('load', () => {
 
   // Scroll-based depth effect
   gsap.to('#hero-main-visual', {
-    scale: 1.2,
-    y: 100,
+    scale: 1.05,
+    y: 50,
     ease: 'none',
     scrollTrigger: {
       trigger: '#hero',
