@@ -17,8 +17,91 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
+// Particle Background System
+function initParticles() {
+  const canvas = document.getElementById('particle-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let width, height;
+
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  class Particle {
+    constructor() {
+      this.init();
+    }
+
+    init() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.size = Math.random() * 2 + 0.5;
+      this.speedX = (Math.random() - 0.5) * 0.4;
+      this.speedY = (Math.random() - 0.5) * 0.4;
+      this.opacity = Math.random() * 0.4 + 0.1;
+      this.depth = Math.random() * 1.5 + 0.5;
+    }
+
+    update() {
+      this.x += this.speedX * this.depth;
+      this.y += this.speedY * this.depth;
+
+      if (this.x < 0) this.x = width;
+      if (this.x > width) this.x = 0;
+      if (this.y < 0) this.y = height;
+      if (this.y > height) this.y = 0;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(165, 180, 252, ${this.opacity})`;
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < 110; i++) {
+    particles.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  // Subtle Mouse Parallax for Particles
+  window.addEventListener('mousemove', (e) => {
+    const mouseX = (e.clientX / width - 0.5) * 30;
+    const mouseY = (e.clientY / height - 0.5) * 30;
+
+    particles.forEach(p => {
+      gsap.to(p, {
+        x: p.x + (mouseX * p.depth * 0.05),
+        y: p.y + (mouseY * p.depth * 0.05),
+        duration: 3,
+        ease: 'power2.out',
+        overwrite: true
+      });
+    });
+  });
+}
+
 // Global Entrance & Interaction Logic
 window.addEventListener('load', () => {
+  initParticles();
+
   const tlEntrance = gsap.timeline();
 
   // Loader sequence
@@ -81,20 +164,6 @@ window.addEventListener('load', () => {
     });
   }
 
-  // Combined Scroll & Staggered Reveal for Portfolio
-  gsap.from('.portfolio-card', {
-    opacity: 0,
-    y: 60,
-    duration: 1.2,
-    stagger: 0.15,
-    ease: 'expo.out',
-    scrollTrigger: {
-      trigger: '#portfolio-grid',
-      start: 'top 85%',
-      toggleActions: 'play none none none'
-    }
-  });
-
   // Staggered Grid Reveal for Showcase
   gsap.to('.grid-item', {
     opacity: 1,
@@ -124,6 +193,7 @@ window.addEventListener('load', () => {
   gridItems.forEach(item => {
     item.addEventListener('click', () => {
       const imgTarget = item.querySelector('img');
+      if (!imgTarget) return;
       const src = imgTarget.src;
       const title = imgTarget.alt;
 
@@ -148,11 +218,11 @@ window.addEventListener('load', () => {
   lightboxClose.addEventListener('click', closeLightbox);
   lightboxOverlay.addEventListener('click', closeLightbox);
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
   });
 
   // Unified Scroll Revelation Flow (remainders)
-  const reveals = document.querySelectorAll('.reveal:not(.portfolio-card)');
+  const reveals = document.querySelectorAll('.reveal:not(.grid-item)');
   reveals.forEach(el => {
     gsap.to(el, {
       opacity: 1,
@@ -176,7 +246,6 @@ window.addEventListener('load', () => {
     menuToggle.classList.toggle('active');
     navMenu.classList.toggle('active');
 
-    // Toggle scroll lock
     if (navMenu.classList.contains('active')) {
       lenis.stop();
     } else {
