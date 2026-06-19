@@ -81,8 +81,71 @@ window.addEventListener('load', () => {
     });
   }
 
-  // Unified Scroll Revelation Flow
-  const reveals = document.querySelectorAll('.reveal');
+  // Combined Scroll & Staggered Reveal for Portfolio
+  gsap.from('.portfolio-card', {
+    opacity: 0,
+    y: 60,
+    duration: 1.2,
+    stagger: 0.15,
+    ease: 'expo.out',
+    scrollTrigger: {
+      trigger: '#portfolio-grid',
+      start: 'top 85%',
+      toggleActions: 'play none none none'
+    }
+  });
+
+  // Lightbox Logic
+  const lightbox = document.getElementById('lightbox');
+  const lightboxContent = document.getElementById('lightbox-content');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxOverlay = document.querySelector('.lightbox-overlay');
+  const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+  portfolioCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const src = card.getAttribute('data-src');
+      const type = card.getAttribute('data-type');
+      const category = card.getAttribute('data-category');
+      const title = card.getAttribute('data-title');
+
+      document.getElementById('modal-category').textContent = category.toUpperCase();
+      document.getElementById('modal-title').textContent = title;
+
+      lightboxContent.innerHTML = '';
+
+      if (type === 'image') {
+        const img = document.createElement('img');
+        img.src = src;
+        lightboxContent.appendChild(img);
+      } else if (type === 'video') {
+        const video = document.createElement('video');
+        video.src = src;
+        video.controls = true;
+        video.autoplay = true;
+        lightboxContent.appendChild(video);
+      }
+
+      lightbox.classList.add('active');
+      lenis.stop();
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lenis.start();
+    const video = lightboxContent.querySelector('video');
+    if (video) video.pause();
+  }
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxOverlay.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // Unified Scroll Revelation Flow (remainders)
+  const reveals = document.querySelectorAll('.reveal:not(.portfolio-card)');
   reveals.forEach(el => {
     gsap.to(el, {
       opacity: 1,

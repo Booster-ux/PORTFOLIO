@@ -168,43 +168,60 @@
                     <p>A closer look at some of our most impactful studio productions.</p>
                 </div>
 
-                <div class="portfolio-grid grid-3">
-                    <div class="portfolio-card reveal">
+                <div class="portfolio-grid grid-3" id="portfolio-grid">
+                    <div class="portfolio-card reveal" data-type="image" data-src="./assets/work_1.png"
+                        data-category="Animation" data-title="Legendary Sword Combo">
                         <div class="portfolio-thumbnail">
-                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800"
-                                alt="Title 1">
-                        </div>
-                        <div class="portfolio-content">
-                            <span class="portfolio-category">FULL GAME</span>
-                            <h3>Grand Adventure RPG</h3>
-                            <p>A massive open-world RPG featuring complex quest systems and custom combat.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-card reveal">
-                        <div class="portfolio-thumbnail">
-                            <img src="https://images.unsplash.com/photo-1614728263952-84ea206f99b6?auto=format&fit=crop&q=80&w=800"
-                                alt="Title 2">
-                        </div>
-                        <div class="portfolio-content">
-                            <span class="portfolio-category">SYSTEMS</span>
-                            <h3>Global Economy Core</h3>
-                            <p>Robust server-side trade and economic systems for top-tier simulator games.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-card reveal">
-                        <div class="portfolio-thumbnail">
-                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800"
-                                alt="Title 3">
+                            <img src="./assets/work_1.png" alt="Legendary Sword Combo" loading="lazy">
                         </div>
                         <div class="portfolio-content">
                             <span class="portfolio-category">ANIMATION</span>
-                            <h3>Legendary Combat Kit</h3>
-                            <p>Custom R15 combat animations featuring fluid sword-play and skill VFX.</p>
+                            <h3>Legendary Sword Combo</h3>
+                            <p>Fluid character-based combat animations for R15 rigs.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card reveal" data-type="image" data-src="./assets/work_2.jpg"
+                        data-category="Full Game Development" data-title="Combat Mechanics Test">
+                        <div class="portfolio-thumbnail">
+                            <img src="./assets/work_2.jpg" alt="Combat Mechanics Test" loading="lazy">
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">FULL GAME</span>
+                            <h3>Combat Mechanics Test</h3>
+                            <p>End-to-end implementation of server-authoritative combat systems.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card reveal" data-type="image"
+                        data-src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800"
+                        data-category="Systems Development" data-title="Global Trade API">
+                        <div class="portfolio-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800"
+                                alt="Global Trade API" loading="lazy">
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">SYSTEMS</span>
+                            <h3>Global Trade API</h3>
+                            <p>Seamless cross-server economic infrastructure for high-traffic games.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Lightbox Modal -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-overlay"></div>
+            <button class="lightbox-close" id="lightbox-close">&times;</button>
+            <div class="lightbox-container">
+                <div class="lightbox-content" id="lightbox-content">
+                    <!-- Dynamic Content -->
+                </div>
+                <div class="lightbox-info">
+                    <span class="portfolio-category" id="modal-category">CATEGORY</span>
+                    <h3 id="modal-title">Project Title</h3>
+                </div>
+            </div>
+        </div>
 
         <!-- Contact Section -->
         <section id="contact" class="section">
