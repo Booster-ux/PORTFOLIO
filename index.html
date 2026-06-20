@@ -4,410 +4,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameOnAI | Premium Roblox Game Development Studio</title>
-    <meta name="description"
-        content="End-to-end Roblox productions, high-performance systems, and cinematic world design.">
-    <link rel="stylesheet" href="./style.css">
+    <title>GameOnAI | Elite Game Development & AI Studio</title>
+    <meta name="description" content="Premium Roblox game development and AI systems for high-end studio productions.">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Living Background Layer -->
-    <div class="bg-scene">
-        <canvas id="particle-canvas"></canvas>
-        <div class="glow-orb orb-1"></div>
-        <div class="glow-orb orb-2"></div>
-        <div class="glow-orb orb-3"></div>
-        <div class="glow-orb orb-4"></div>
-        <div class="glow-orb orb-5"></div>
-    </div>
-
-    <div id="page-loader" class="page-load-cover">
-        <h2 class="gradient-text" style="font-size: 1.5rem; letter-spacing: 5px;">GAMEONAI</h2>
-    </div>
+    <!-- 1. Background Particles (CSS Triggered by JS) -->
+    <div class="particles-container" id="particles"></div>
 
     <!-- Navigation -->
     <nav id="main-nav">
-        <div class="container nav-inner">
-            <a href="#" class="logo">GAMEONAI</a>
-
-            <div class="nav-menu" id="nav-menu">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#" class="logo">GAMEONAI</a>
                 <div class="nav-links">
-                    <a href="#" class="nav-link">Home</a>
                     <a href="#services" class="nav-link">Services</a>
-                    <a href="#portfolio" class="nav-link">Work</a>
+                    <a href="#studio-showcase" class="nav-link">Portfolio</a>
                     <a href="#contact" class="nav-link">Contact</a>
                 </div>
-                <a href="#contact" class="btn btn-solid nav-cta">Hire Us</a>
             </div>
-
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
         </div>
     </nav>
 
-    <main id="app">
-        <!-- Hero Section -->
-        <section id="hero" class="section">
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero">
             <div class="container">
-                <div class="hero-grid">
+                <div class="why-grid">
                     <div class="hero-content">
-                        <div class="hero-badge hero-entrance">ROBLOX DEVELOPMENT STUDIO</div>
-                        <h1 class="hero-entrance"><span class="gradient-text">Building Games</span> <br>That Players
-                            Remember</h1>
-                        <p class="hero-subtitle hero-entrance">Full Production, Advanced Systems, Professional
-                            Animation, and Immersive Environments.</p>
-                        <div class="hero-actions hero-entrance">
-                            <a href="#portfolio" class="btn btn-solid">View Portfolio</a>
-                            <a href="#contact" class="btn btn-outline">Start Your Project</a>
+                        <span class="tagline">PRODUCTION READY STUDIO</span>
+                        <h1 class="gradient-text">Crafting Future <br>Game Worlds</h1>
+                        <p>High-performance Roblox development and scalable AI architectures for forward-thinking
+                            creative studios.</p>
+                        <div class="hero-btns" style="margin-top: 32px;">
+                            <a href="#contact" class="btn">Send Proposal</a>
+                            <a href="#studio-showcase" class="btn btn-outline">View Showcase</a>
                         </div>
-                        <div class="hero-trust hero-entrance">
-                            <div class="trust-item">
-                                <span class="trust-stat">5+</span>
-                                <span class="trust-label">Years Exp</span>
+                        <div class="hero-stats" style="margin-top: 48px; display: flex; gap: 40px;">
+                            <div>
+                                <div class="trust-stat">12M+</div>
+                                <div class="trust-label">Placements</div>
                             </div>
-                            <div class="trust-item">
-                                <span class="trust-stat">50M+</span>
-                                <span class="trust-label">Total Plays</span>
-                            </div>
-                            <div class="trust-item">
-                                <span class="trust-stat">100%</span>
-                                <span class="trust-label">Success Rate</span>
+                            <div>
+                                <div class="trust-stat">45+</div>
+                                <div class="trust-label">Projects</div>
                             </div>
                         </div>
                     </div>
-                    <div class="hero-visual hero-entrance">
-                        <img src="./assets/hero_final.jpg" alt="Head-to-toe Mascot" id="mascot-main">
+                    <div class="hero-visual">
+                        <img src="./assets/hero-mascot.png" id="mascot-main" alt="Grace GameOnAI Mascot"
+                            style="max-width: 100%; filter: drop-shadow(0 0 50px rgba(168,85,247,0.3));">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="section">
+        <!-- 2. Services Section -->
+        <section id="services">
             <div class="container">
-                <div class="section-header reveal">
-                    <span class="tagline">Expertise</span>
-                    <h2>ROBLOX <span class="gradient-text">PRODUCTION</span> SERVICES</h2>
-                    <p>From core systems to global launch, we handle every stage of development.</p>
+                <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+                    <span class="tagline">CAPABILITIES</span>
+                    <h2>Studio Engineering</h2>
                 </div>
-
-                <div class="grid-3">
-                    <div class="service-card reveal">
-                        <div class="service-icon">🎮</div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🎬</div>
                         <h3>Full Production</h3>
-                        <p>Complete end-to-end studio management for new Roblox titles.</p>
+                        <p>End-to-end game delivery from initial blockout to global launch and live-ops management.</p>
                     </div>
-                    <div class="service-card reveal">
-                        <div class="service-icon">⚙️</div>
+                    <div class="service-card">
+                        <div class="service-icon">🧪</div>
                         <h3>Systems Architecture</h3>
-                        <p>Robust backend logic, secure data saving, and multiplayer systems.</p>
+                        <p>Advanced data-oriented backend systems designed for extreme scale and low-latency networking.
+                        </p>
                     </div>
-                    <div class="service-card reveal">
-                        <div class="service-icon">⚔️</div>
-                        <h3>Advanced Animation</h3>
-                        <p>Fluid combatMoves, cinematic sequences, and NPC locomotion.</p>
-                    </div>
-                    <div class="service-card reveal">
-                        <div class="service-icon">🌎</div>
-                        <h3>World Building</h3>
-                        <p>Atmospheric maps, custom terrain, and high-end lighting design.</p>
-                    </div>
-                    <div class="service-card reveal">
+                    <div class="service-card">
                         <div class="service-icon">✨</div>
-                        <h3>UI/UX & VFX</h3>
-                        <p>Modern game interfaces and stunning custom particle systems.</p>
+                        <h3>Advanced Animation</h3>
+                        <p>Procedural animation blending and high-fidelity rigged assets for cinematic character motion.
+                        </p>
                     </div>
-                    <div class="service-card reveal">
+                    <div class="service-card">
+                        <div class="service-icon">🏔️</div>
+                        <h3>World Building</h3>
+                        <p>Atmospheric level design using custom PBR materials and professional lighting pipelines.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔥</div>
+                        <h3>UI/UX & VFX</h3>
+                        <p>Diegetic interfaces and optimized particle systems that maintain 60fps on all devices.</p>
+                    </div>
+                    <div class="service-card">
                         <div class="service-icon">📦</div>
                         <h3>Custom Assets</h3>
-                        <p>Optimized 3D models and tailored production assets for Roblox.</p>
+                        <p>Exclusive 3D models and tailored texture sets built specifically for the Roblox engine.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Why GameOnAI Section -->
-        <section id="why" class="section">
+        <!-- 3. Why Choose GameOnAI -->
+        <section id="why-choose">
             <div class="container">
-                <div class="grid-2">
-                    <div class="reveal">
-                        <span class="tagline">The Difference</span>
-                        <h2>WHY CHOOSE <span class="gradient-text">GAMEONAI STUDIO</span></h2>
-                        <p style="margin-top: 24px;">We combine technical excellence with artistic vision to create
-                            Roblox experiences that stand out in a crowded market.</p>
+                <div class="why-grid">
+                    <div class="why-text">
+                        <span class="tagline">OUR PHILOSOPHY</span>
+                        <h2>Why Creative Labs <br>Choose Us</h2>
+                        <p>We blend technical mastery with an artist-first approach to ensure your project stands out in
+                            a crowded market.</p>
                     </div>
-                    <div class="why-features">
-                        <div class="feature-box reveal">
+                    <div class="why-features" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="why-choose-card">
+                            <div class="feature-icon">🚀</div>
                             <h3>High Performance</h3>
-                            <p>Optimized for all devices, ensuring maximum accessibility.</p>
+                            <p>Code optimized for maximum throughput.</p>
                         </div>
-                        <div class="feature-box reveal">
+                        <div class="why-choose-card">
+                            <div class="feature-icon">🛡️</div>
                             <h3>Scalable Systems</h3>
-                            <p>Built to handle thousands of concurrent players with ease.</p>
+                            <p>Ready for millions of concurrent users.</p>
                         </div>
-                        <div class="feature-box reveal">
+                        <div class="why-choose-card">
+                            <div class="feature-icon">🎨</div>
                             <h3>Artist Led</h3>
-                            <p>Every pixel and animation is polished to studio standards.</p>
+                            <p>Focused on visual and visceral impact.</p>
                         </div>
-                        <div class="feature-box reveal">
+                        <div class="why-choose-card">
+                            <div class="feature-icon">🤝</div>
                             <h3>Reliable Partner</h3>
-                            <p>Clear communication and strict deadline adherence.</p>
+                            <p>Direct communication and fast delivery.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Showcase Section -->
-        <section id="portfolio" class="section">
+        <!-- 4. Studio Showcase (Marquee) -->
+        <section id="studio-showcase">
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <span class="tagline">PORTFOLIO</span>
+                <h2>Recent Productions</h2>
+            </div>
+            <div class="marquee-viewport" id="marquee-viewport">
+                <!-- Rows will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- 5. Contact Section -->
+        <section id="contact">
             <div class="container">
-                <div class="section-header reveal centered">
-                    <span class="tagline">Recent Work</span>
-                    <h2>STUDIO <span class="gradient-text">SHOWCASE</span></h2>
-                    <p>A closer look at some of our most impactful studio productions.</p>
-                </div>
-
-                <div class="browser-container">
-                    <div class="browser-viewport" id="portfolio-browser">
-                        <div class="browser-track">
-                            <!-- Items 1-45 -->
-                            <div class="browser-item"><img src="./assets/gallery/item_1.png" alt="Showcase 1"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_2.png" alt="Showcase 2"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_3.png" alt="Showcase 3"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_4.png" alt="Showcase 4"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_5.png" alt="Showcase 5"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_6.png" alt="Showcase 6"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_7.png" alt="Showcase 7"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_8.png" alt="Showcase 8"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_9.png" alt="Showcase 9"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_10.png" alt="Showcase 10"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_11.png" alt="Showcase 11"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_12.png" alt="Showcase 12"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_13.png" alt="Showcase 13"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_14.png" alt="Showcase 14"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_15.png" alt="Showcase 15"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_16.png" alt="Showcase 16"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_17.png" alt="Showcase 17"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_18.png" alt="Showcase 18"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_19.jpg" alt="Showcase 19"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_20.png" alt="Showcase 20"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_21.png" alt="Showcase 21"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_22.jpg" alt="Showcase 22"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_23.png" alt="Showcase 23"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_24.png" alt="Showcase 24"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_25.png" alt="Showcase 25"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_26.png" alt="Showcase 26"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_27.png" alt="Showcase 27"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_28.png" alt="Showcase 28"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_29.png" alt="Showcase 29"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_30.png" alt="Showcase 30"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_31.png" alt="Showcase 31"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_32.png" alt="Showcase 32"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_33.png" alt="Showcase 33"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_34.png" alt="Showcase 34"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_35.png" alt="Showcase 35"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_36.png" alt="Showcase 36"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_37.png" alt="Showcase 37"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_38.png" alt="Showcase 38"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_39.png" alt="Showcase 39"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_40.png" alt="Showcase 40"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_41.png" alt="Showcase 41"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_42.png" alt="Showcase 42"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_43.png" alt="Showcase 43"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_44.png" alt="Showcase 44"
-                                    loading="lazy"></div>
-                            <div class="browser-item"><img src="./assets/gallery/item_45.png" alt="Showcase 45"
-                                    loading="lazy"></div>
+                <div class="why-grid">
+                    <div class="contact-card" style="padding: 60px; grid-column: span 2;">
+                        <span class="tagline">GET IN TOUCH</span>
+                        <h2>Start Your Next Project 👋</h2>
+                        <p>Looking for a lead developer or studio support? Let's discuss your production needs.</p>
+                        <div style="margin-top: 32px; display: flex; gap: 30px; align-items: center;">
+                            <div><strong>Discord:</strong> GraceAI#0001</div>
+                            <div><strong>Email:</strong> contact@gameonai.com</div>
                         </div>
-                    </div>
-
-                    <!-- Controls -->
-                    <div class="browser-controls">
-                        <button class="browser-btn prev" id="browser-prev">
-                            <span class="btn-icon">←</span>
-                        </button>
-                        <div class="pagination-dots" id="pagination-dots"></div>
-                        <button class="browser-btn next" id="browser-next">
-                            <span class="btn-icon">→</span>
-                        </button>
+                        <button class="btn" style="margin-top: 40px; width: auto; border: none; cursor: pointer;">Send
+                            Proposal</button>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Lightbox Modal -->
-        <div class="lightbox" id="lightbox">
-            <div class="lightbox-overlay"></div>
-            <button class="lightbox-close" id="lightbox-close">&times;</button>
-            <div class="lightbox-container">
-                <div class="lightbox-content" id="lightbox-content">
-                    <!-- Dynamic Content -->
-                </div>
-                <div class="lightbox-info">
-                    <span class="portfolio-category" id="modal-category">CATEGORY</span>
-                    <h3 id="modal-title">Project Title</h3>
-                </div>
-            </div>
-        </div>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="contact-grid reveal">
-                    <div class="contact-info">
-                        <h2>LET'S <span class="gradient-text">BUILD </span> SOMETHING GREAT</h2>
-                        <p style="margin: 32px 0;">Have a project in mind? Let's discuss your vision and how we can
-                            bring it to life on Roblox.</p>
-                        <div class="contact-methods">
-                            <div class="contact-item">
-                                <span class="contact-label">Discord</span>
-                                <span class="contact-val">gameonai</span>
-                            </div>
-                            <div class="contact-item">
-                                <span class="contact-label">Email</span>
-                                <span class="contact-val">gracegameonai@gmail.com</span>
-                            </div>
-                        </div>
-                    </div>
-                    <form class="contact-form">
-                        <div class="form-row">
-                            <input type="text" class="form-input" placeholder="Name">
-                            <input type="email" class="form-input" placeholder="Email">
-                        </div>
-                        <div class="form-row">
-                            <input type="text" class="form-input" placeholder="Budget (USD)">
-                            <input type="text" class="form-input" placeholder="Timeline">
-                        </div>
-                        <textarea class="form-input" rows="5" placeholder="Project Description"></textarea>
-                        <button type="submit" class="btn btn-solid" style="width: 100%;">Send Proposal</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <div class="container">
-                <p>&copy; 2026 GAMEONAI STUDIO. ALL RIGHTS RESERVED.</p>
-            </div>
-        </footer>
     </main>
 
-    <script type="module" src="./main.js"></script>
-    <script>
-        // High-Performance Vanilla JS Animation Engine (Pure JS, no libs)
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. Particle Field Initialization
-            const particleContainer = document.createElement('div');
-            particleContainer.className = 'particles-overlay';
-            document.body.prepend(particleContainer);
+    <!-- 6. Footer -->
+    <footer>
+        <div class="container" style="text-align: center;">
+            <div class="logo" style="margin-bottom: 20px; display: inline-block;">GAMEONAI</div>
+            <p>© 2026 GameOnAI Studio. All rights reserved.</p>
+        </div>
+    </footer>
 
-            for (let i = 0; i < 50; i++) {
+    <!-- Vanilla JS Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Particle Generator
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
                 const p = document.createElement('div');
                 p.className = 'particle';
                 p.style.left = Math.random() * 100 + '%';
-                p.style.animationDelay = Math.random() * 15 + 's';
-                p.style.opacity = Math.random() * 0.5 + 0.2;
-                particleContainer.appendChild(p);
+                p.style.animationDuration = (Math.random() * 12 + 8) + 's';
+                p.style.animationDelay = (Math.random() * 5) + 's';
+                particlesContainer.appendChild(p);
             }
 
-            // 2. Word Split Logic for Text Waves
-            const textContainers = document.querySelectorAll('.service-card p, .service-card h3, .feature-box p, .feature-box h3, .why-features p');
-            textContainers.forEach(container => {
-                const words = container.innerText.split(' ');
-                container.innerHTML = words.map((word, i) =>
-                    `<span class="word-span" style="animation-delay: ${i * 0.05}s">${word}</span>`
-                ).join(' ');
+            // 2. Text Wave Wrapping
+            const textTargets = document.querySelectorAll('.service-card h3, .service-card p, .why-choose-card h3, .why-choose-card p, .contact-card h2, .contact-card p');
+            textTargets.forEach(el => {
+                const words = el.innerText.split(' ');
+                el.innerHTML = words.map((w, i) => `<span class="word" style="transition-delay: ${i * 0.05}s">${w}</span>`).join(' ');
 
-                const card = container.closest('.service-card, .feature-box, .why-choose-card');
+                const card = el.closest('.service-card, .why-choose-card, .contact-card');
                 if (card) {
-                    card.addEventListener('mouseenter', () => card.classList.add('card-hovered'));
-                    card.addEventListener('mouseleave', () => card.classList.remove('card-hovered'));
+                    card.addEventListener('mouseenter', () => {
+                        card.querySelectorAll('.word').forEach((word, index) => {
+                            setTimeout(() => word.classList.add('wave'), index * 50);
+                        });
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        card.querySelectorAll('.word').forEach(word => word.classList.remove('wave'));
+                    });
                 }
             });
 
-            // 3. Showcase Marquee Rows (Two Rows, Opposite Directions)
-            const browserViewport = document.getElementById('portfolio-browser');
-            const originalTrack = browserViewport.querySelector('.browser-track');
-            const items = Array.from(originalTrack.querySelectorAll('.browser-item'));
+            // 3. Showcase Marquee Setup
+            const marqueeViewport = document.getElementById('marquee-viewport');
+            const totalImages = 45;
+            const images = [];
+            for (let i = 1; i <= totalImages; i++) {
+                const ext = (i === 19 || i === 22) ? 'jpg' : 'png';
+                images.push(`./assets/gallery/item_${i}.${ext}`);
+            }
 
-            // Reformat items as marquee items
-            items.forEach(item => {
-                item.className = 'marquee-item';
-                item.removeAttribute('style'); // Clear floating logic variables
-            });
-
-            const mid = Math.ceil(items.length / 2);
-            const row1Items = items.slice(0, mid);
-            const row2Items = items.slice(mid);
-
-            function createRow(itemsList, directionClass) {
+            function buildRow(directionClass) {
                 const row = document.createElement('div');
                 row.className = `marquee-row ${directionClass}`;
-                // Double items for seamless loop
-                itemsList.concat(itemsList).forEach(item => {
-                    const clone = item.cloneNode(true);
-                    row.appendChild(clone);
+                // Duplicate twice: [1-45][1-45]
+                const fullSet = [...images, ...images];
+                fullSet.forEach(src => {
+                    const item = document.createElement('div');
+                    item.className = 'marquee-item';
+                    item.innerHTML = `<img src="${src}" loading="lazy" alt="Project Asset">`;
+                    row.appendChild(item);
                 });
                 return row;
             }
 
-            browserViewport.innerHTML = ''; // Clear viewport
+            marqueeViewport.appendChild(buildRow('animate-left'));
+            marqueeViewport.appendChild(buildRow('animate-right'));
 
-            if (window.innerWidth > 1024) {
-                browserViewport.appendChild(createRow(row1Items, 'animate-left'));
-                browserViewport.appendChild(createRow(row2Items, 'animate-right'));
-            } else {
-                browserViewport.appendChild(createRow(items, 'animate-left'));
-            }
-
-            // Remove old controls
-            const controls = document.querySelector('.browser-controls');
-            if (controls) controls.style.display = 'none';
+            // Nav Scroll Effect
+            window.addEventListener('scroll', () => {
+                const nav = document.getElementById('main-nav');
+                if (window.scrollY > 50) nav.classList.add('scrolled');
+                else nav.classList.remove('scrolled');
+            });
         });
     </script>
 </body>
