@@ -19,8 +19,8 @@
 
   /* Spacing System */
   --container-max: 1400px;
-  --section-padding: clamp(80px, 12vw, 160px);
-  --grid-gap: clamp(24px, 4vw, 48px);
+  --section-padding: clamp(60px, 8vw, 100px);
+  --grid-gap: clamp(24px, 4vw, 32px);
 
   /* Animation */
   --easing: cubic-bezier(0.16, 1, 0.3, 1);
@@ -59,6 +59,21 @@ body {
   z-index: -2;
   overflow: hidden;
   pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, #0c0e14 0%, #050608 100%);
+}
+
+/* Subtle Noise Grain Overlay */
+.bg-scene::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  pointer-events: none;
 }
 
 #particle-canvas {
@@ -67,7 +82,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 .glow-orb {
@@ -75,6 +90,7 @@ body {
   border-radius: 50%;
   filter: blur(140px);
   opacity: 0.12;
+  will-change: transform;
 }
 
 .orb-1 {

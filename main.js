@@ -41,11 +41,11 @@ function initParticles() {
     init() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.size = Math.random() * 2 + 0.5;
-      this.speedX = (Math.random() - 0.5) * 0.4;
-      this.speedY = (Math.random() - 0.5) * 0.4;
-      this.opacity = Math.random() * 0.4 + 0.1;
-      this.depth = Math.random() * 1.5 + 0.5;
+      this.size = Math.random() * 2 + 0.3;
+      this.speedX = (Math.random() - 0.5) * 0.2; // Slower drift
+      this.speedY = (Math.random() - 0.5) * 0.2; // Slower drift
+      this.opacity = Math.random() * 0.3 + 0.1;
+      this.depth = Math.random() * 1.2 + 0.5;
     }
 
     update() {
@@ -302,13 +302,13 @@ window.addEventListener('load', () => {
 
   // Global Parallax depth for background scene
   gsap.to('.bg-scene', {
-    yPercent: -10,
+    yPercent: -15, /* Increased for more energy */
     ease: 'none',
     scrollTrigger: {
       trigger: 'body',
       start: 'top top',
       end: 'bottom bottom',
-      scrub: true
+      scrub: 1.5 /* Smoother scrub */
     }
   });
 });
