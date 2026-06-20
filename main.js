@@ -210,7 +210,38 @@ window.addEventListener('load', () => {
     });
 
     // Lightbox Binding
-    items.forEach(item => {
+    items.forEach((item, index) => {
+      // Assign Random Antigravity Params
+      const duration = (Math.random() * 4 + 4).toFixed(2);
+      const delay = (Math.random() * -8).toFixed(2);
+      item.style.setProperty('--float-duration', `${duration}s`);
+      item.style.setProperty('--float-delay', `${delay}s`);
+
+      // Performance Optimization: Pause when out of view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            item.classList.remove('out-of-view');
+          } else {
+            item.classList.add('out-of-view');
+          }
+        });
+      }, { threshold: 0.1 });
+      observer.observe(item);
+
+      // Entrance Animation
+      gsap.from(item, {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        delay: 0.1 * index,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: viewport,
+          start: 'top 85%',
+        }
+      });
+
       item.addEventListener('click', () => {
         const imgTarget = item.querySelector('img');
         if (!imgTarget) return;
