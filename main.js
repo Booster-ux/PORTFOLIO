@@ -164,89 +164,53 @@ window.addEventListener('load', () => {
     });
   }
 
-  // High-End Interactive Carousel System
-  function initShowcaseCarousel() {
-    const viewport = document.getElementById('showcase-carousel');
-    const track = viewport.querySelector('.carousel-track');
-    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+  // High-Performance Snap Browser System
+  function initPortfolioBrowser() {
+    const viewport = document.getElementById('portfolio-browser');
+    const track = viewport.querySelector('.browser-track');
+    const items = track.querySelectorAll('.browser-item');
+    const btnPrev = document.getElementById('browser-prev');
+    const btnNext = document.getElementById('browser-next');
+    const pagination = document.getElementById('pagination-dots');
 
-    // Duplicate slides for seamless loop
-    slides.forEach(slide => {
-      const clone = slide.cloneNode(true);
-      track.appendChild(clone);
-    });
+    if (!viewport) return;
 
-    let totalWidth = 0;
-    const updateWidths = () => {
-      totalWidth = track.scrollWidth / 2;
-    };
-    updateWidths();
-    window.addEventListener('resize', updateWidths);
+    // Generate Pagination Dots
+    const itemsPerView = window.innerWidth > 1200 ? 8 : (window.innerWidth > 991 ? 6 : (window.innerWidth > 767 ? 4 : 2));
+    const pageCount = Math.ceil(items.length / itemsPerView);
 
-    let xPos = 0;
-    let isDragging = false;
-    let velocity = 0.8; // Constant drift speed
-
-    function loop() {
-      if (!isDragging) {
-        xPos -= velocity;
-        if (xPos <= -totalWidth) xPos = 0;
-        if (xPos > 0) xPos = -totalWidth;
-        track.style.transform = `translateX(${xPos}px)`;
-      }
-      requestAnimationFrame(loop);
+    for (let i = 0; i < pageCount; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        const scrollAmount = i * (viewport.offsetWidth + 16);
+        viewport.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+      });
+      pagination.appendChild(dot);
     }
-    loop();
 
-    // Interaction Handlers
-    let startX, currentSwipeX;
+    const dots = pagination.querySelectorAll('.dot');
 
-    viewport.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      startX = e.pageX - xPos;
-      velocity = 0;
+    // Navigation Buttons
+    btnNext.addEventListener('click', () => {
+      viewport.scrollBy({ left: viewport.offsetWidth / 2, behavior: 'smooth' });
     });
 
-    window.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      currentSwipeX = e.pageX - startX;
-      xPos = currentSwipeX;
-      track.style.transform = `translateX(${xPos}px)`;
+    btnPrev.addEventListener('click', () => {
+      viewport.scrollBy({ left: -viewport.offsetWidth / 2, behavior: 'smooth' });
     });
 
-    window.addEventListener('mouseup', () => {
-      if (isDragging) {
-        isDragging = false;
-        velocity = 0.8; // Resume drift
-      }
+    // Update Dots on Scroll
+    viewport.addEventListener('scroll', () => {
+      const scrollIndex = Math.round(viewport.scrollLeft / (viewport.offsetWidth + 16));
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === scrollIndex);
+      });
     });
 
-    // Touch Support
-    viewport.addEventListener('touchstart', (e) => {
-      isDragging = true;
-      startX = e.touches[0].pageX - xPos;
-    });
-
-    viewport.addEventListener('touchmove', (e) => {
-      if (!isDragging) return;
-      currentSwipeX = e.touches[0].pageX - startX;
-      xPos = currentSwipeX;
-      track.style.transform = `translateX(${xPos}px)`;
-    });
-
-    viewport.addEventListener('touchend', () => {
-      isDragging = false;
-      velocity = 0.8;
-    });
-
-    // Hover Pause
-    viewport.addEventListener('mouseenter', () => velocity = 0.2);
-    viewport.addEventListener('mouseleave', () => {
-      if (!isDragging) velocity = 0.8;
-    });
-
-    // Re-bind Lightbox to slides (including clones)
-    track.querySelectorAll('.carousel-slide').forEach(item => {
+    // Lightbox Binding
+    items.forEach(item => {
       item.addEventListener('click', () => {
         const imgTarget = item.querySelector('img');
         if (!imgTarget) return;
@@ -266,7 +230,7 @@ window.addEventListener('load', () => {
     });
   }
 
-  initShowcaseCarousel();
+  initPortfolioBrowser();
 
   // Lightbox Logic (Old grid binding removed)
   const lightbox = document.getElementById('lightbox');
