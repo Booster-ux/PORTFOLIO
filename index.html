@@ -10,9 +10,6 @@
 </head>
 
 <body>
-    <!-- 1. Background Particles (CSS Triggered by JS) -->
-    <div class="particles-container" id="particles"></div>
-
     <!-- Navigation -->
     <nav id="main-nav">
         <div class="container">
@@ -20,7 +17,7 @@
                 <a href="#" class="logo">GAMEONAI</a>
                 <div class="nav-links">
                     <a href="#services" class="nav-link">Services</a>
-                    <a href="#studio-showcase" class="nav-link">Portfolio</a>
+                    <a href="#showcase" class="nav-link">Portfolio</a>
                     <a href="#contact" class="nav-link">Contact</a>
                 </div>
             </div>
@@ -28,83 +25,91 @@
     </nav>
 
     <main>
-        <!-- 1. Hero Section -->
-        <section id="hero">
+        <!-- Hero Section -->
+        <section id="hero" style="min-height: 90vh; display: flex; align-items: center;">
             <div class="container">
-                <div class="why-grid">
+                <div class="why-grid" style="align-items: center;">
                     <div class="hero-content">
                         <span class="tagline">PRODUCTION READY STUDIO</span>
                         <h1 class="gradient-text">Crafting Future <br>Game Worlds</h1>
                         <p>High-performance Roblox development and scalable AI architectures for forward-thinking
                             creative studios.</p>
-                        <div class="hero-btns" style="margin-top: 32px;">
+                        <div style="margin-top: 32px; display: flex; gap: 16px;">
                             <a href="#contact" class="btn">Send Proposal</a>
-                            <a href="#studio-showcase" class="btn btn-outline">View Showcase</a>
-                        </div>
-                        <div class="hero-stats" style="margin-top: 48px; display: flex; gap: 40px;">
-                            <div>
-                                <div class="trust-stat">12M+</div>
-                                <div class="trust-label">Placements</div>
-                            </div>
-                            <div>
-                                <div class="trust-stat">45+</div>
-                                <div class="trust-label">Projects</div>
-                            </div>
+                            <a href="#showcase" class="btn"
+                                style="background: transparent; color: white; border: 1px solid rgba(255,255,255,0.1);">View
+                                Showcase</a>
                         </div>
                     </div>
-                    <div class="hero-visual">
-                        <img src="./assets/hero-mascot.png" id="mascot-main" alt="Grace GameOnAI Mascot"
-                            style="max-width: 100%; filter: drop-shadow(0 0 50px rgba(168,85,247,0.3));">
+                    <div class="hero-image" style="text-align: right;">
+                        <img src="/assets/hero_final-CsPejBRe.jpg" alt="Grace Mascot"
+                            style="max-width: 100%; border-radius: 40px; filter: drop-shadow(0 0 50px rgba(168,85,247,0.3));">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. Services Section -->
+        <!-- Services Section -->
         <section id="services">
             <div class="container">
-                <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+                <div style="text-align: center; margin-bottom: 40px;">
                     <span class="tagline">CAPABILITIES</span>
                     <h2>Studio Engineering</h2>
                 </div>
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">🎬</div>
-                        <h3>Full Production</h3>
-                        <p>End-to-end game delivery from initial blockout to global launch and live-ops management.</p>
+                        <div class="card-content">
+                            <h3>Full Production</h3>
+                            <p>End-to-end game delivery from initial blockout to global launch and live-ops management.
+                            </p>
+                        </div>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">🧪</div>
-                        <h3>Systems Architecture</h3>
-                        <p>Advanced data-oriented backend systems designed for extreme scale and low-latency networking.
-                        </p>
+                        <div class="card-content">
+                            <h3>Systems Architecture</h3>
+                            <p>Advanced data-oriented backend systems designed for extreme scale and low-latency
+                                networking.</p>
+                        </div>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">✨</div>
-                        <h3>Advanced Animation</h3>
-                        <p>Procedural animation blending and high-fidelity rigged assets for cinematic character motion.
-                        </p>
+                        <div class="card-content">
+                            <h3>Advanced Animation</h3>
+                            <p>Procedural animation blending and high-fidelity rigged assets for cinematic character
+                                motion.</p>
+                        </div>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">🏔️</div>
-                        <h3>World Building</h3>
-                        <p>Atmospheric level design using custom PBR materials and professional lighting pipelines.</p>
+                        <div class="card-content">
+                            <h3>World Building</h3>
+                            <p>Atmospheric level design using custom PBR materials and professional lighting pipelines.
+                            </p>
+                        </div>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">🔥</div>
-                        <h3>UI/UX & VFX</h3>
-                        <p>Diegetic interfaces and optimized particle systems that maintain 60fps on all devices.</p>
+                        <div class="card-content">
+                            <h3>UI/UX & VFX</h3>
+                            <p>Diegetic interfaces and optimized particle systems that maintain 60fps on all devices.
+                            </p>
+                        </div>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">📦</div>
-                        <h3>Custom Assets</h3>
-                        <p>Exclusive 3D models and tailored texture sets built specifically for the Roblox engine.</p>
+                        <div class="card-content">
+                            <h3>Custom Assets</h3>
+                            <p>Exclusive 3D models and tailored texture sets built specifically for the Roblox engine.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Why Choose GameOnAI -->
+        <!-- Why Choose Us Section -->
         <section id="why-choose">
             <div class="container">
                 <div class="why-grid">
@@ -114,7 +119,8 @@
                         <p>We blend technical mastery with an artist-first approach to ensure your project stands out in
                             a crowded market.</p>
                     </div>
-                    <div class="why-features" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="why-features-grid"
+                        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
                         <div class="why-choose-card">
                             <div class="feature-icon">🚀</div>
                             <h3>High Performance</h3>
@@ -140,105 +146,100 @@
             </div>
         </section>
 
-        <!-- 4. Studio Showcase (Marquee) -->
-        <section id="studio-showcase">
-            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+        <!-- Portfolio/Showcase Section -->
+        <section id="showcase">
+            <div style="text-align: center; margin-bottom: 40px;">
                 <span class="tagline">PORTFOLIO</span>
                 <h2>Recent Productions</h2>
             </div>
-            <div class="marquee-viewport" id="marquee-viewport">
-                <!-- Rows will be injected by JS -->
+            <div class="showcase-viewport" id="showcase-viewport">
+                <!-- Row 1: Left -->
+                <div class="showcase-row row-left" id="row-1"></div>
+                <!-- Row 2: Right -->
+                <div class="showcase-row row-right" id="row-2"></div>
             </div>
         </section>
 
-        <!-- 5. Contact Section -->
+        <!-- Contact Section -->
         <section id="contact">
             <div class="container">
-                <div class="why-grid">
-                    <div class="contact-card" style="padding: 60px; grid-column: span 2;">
-                        <span class="tagline">GET IN TOUCH</span>
-                        <h2>Start Your Next Project 👋</h2>
-                        <p>Looking for a lead developer or studio support? Let's discuss your production needs.</p>
-                        <div style="margin-top: 32px; display: flex; gap: 30px; align-items: center;">
-                            <div><strong>Discord:</strong> GraceAI#0001</div>
-                            <div><strong>Email:</strong> contact@gameonai.com</div>
-                        </div>
-                        <button class="btn" style="margin-top: 40px; width: auto; border: none; cursor: pointer;">Send
-                            Proposal</button>
+                <div class="contact-card" style="padding: 60px; text-align: center;">
+                    <span class="tagline">GET IN TOUCH</span>
+                    <h2>Start Your Next Project 👋</h2>
+                    <p>Looking for a lead developer or studio support? Let's discuss your production needs.</p>
+                    <div style="margin-top: 40px; display: flex; gap: 32px; justify-content: center;">
+                        <a href="#" class="btn">Send Proposal</a>
+                        <div style="color: var(--gray-400);">Discord: <strong>GraceAI#0001</strong></div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- 6. Footer -->
     <footer>
-        <div class="container" style="text-align: center;">
-            <div class="logo" style="margin-bottom: 20px; display: inline-block;">GAMEONAI</div>
+        <div class="container">
             <p>© 2026 GameOnAI Studio. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Vanilla JS Logic -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Particle Generator
-            const particlesContainer = document.getElementById('particles');
-            for (let i = 0; i < 30; i++) {
-                const p = document.createElement('div');
-                p.className = 'particle';
-                p.style.left = Math.random() * 100 + '%';
-                p.style.animationDuration = (Math.random() * 12 + 8) + 's';
-                p.style.animationDelay = (Math.random() * 5) + 's';
-                particlesContainer.appendChild(p);
+            // 1. Showcase Marquee Setup (Hashed Image Paths)
+            const row1 = document.getElementById('row-1');
+            const row2 = document.getElementById('row-2');
+            const totalItems = 45;
+
+            // Build the image list with specific paths and fallbacks
+            const images = [];
+            for (let i = 1; i <= totalItems; i++) {
+                let src = '';
+                if (i === 1) src = '/assets/item_1-UG3dXa6-.png';
+                else if (i === 2) src = '/assets/item_2-8nTDcb-m.png';
+                else if (i === 3) src = '/assets/item_3-BrY5zhEm.png';
+                else {
+                    const ext = (i === 19 || i === 22) ? 'jpg' : 'png';
+                    src = `./assets/gallery/item_${i}.${ext}`;
+                }
+                images.push(src);
             }
 
-            // 2. Text Wave Wrapping
-            const textTargets = document.querySelectorAll('.service-card h3, .service-card p, .why-choose-card h3, .why-choose-card p, .contact-card h2, .contact-card p');
-            textTargets.forEach(el => {
-                const words = el.innerText.split(' ');
-                el.innerHTML = words.map((w, i) => `<span class="word" style="transition-delay: ${i * 0.05}s">${w}</span>`).join(' ');
+            function populateRow(container, imageList) {
+                // Duplicate twice for seamless loop
+                const items = [...imageList, ...imageList];
+                items.forEach(src => {
+                    const div = document.createElement('div');
+                    div.className = 'showcase-item';
+                    div.innerHTML = `<img src="${src}" loading="lazy" alt="Production Asset">`;
+                    container.appendChild(div);
+                });
+            }
 
-                const card = el.closest('.service-card, .why-choose-card, .contact-card');
-                if (card) {
-                    card.addEventListener('mouseenter', () => {
-                        card.querySelectorAll('.word').forEach((word, index) => {
-                            setTimeout(() => word.classList.add('wave'), index * 50);
-                        });
+            populateRow(row1, images);
+            populateRow(row2, images);
+
+            // 2. Text Wave Logic
+            const cards = document.querySelectorAll('.service-card, .why-choose-card');
+            cards.forEach(card => {
+                const textNodes = card.querySelectorAll('h3, p');
+                textNodes.forEach(node => {
+                    const words = node.innerText.split(' ');
+                    node.innerHTML = words.map(w => `<span class="word">${w}</span>`).join(' ');
+                });
+
+                const triggerWave = () => {
+                    card.querySelectorAll('.word').forEach((word, i) => {
+                        setTimeout(() => {
+                            word.classList.add('wave');
+                            setTimeout(() => word.classList.remove('wave'), 400);
+                        }, i * 50);
                     });
-                    card.addEventListener('mouseleave', () => {
-                        card.querySelectorAll('.word').forEach(word => word.classList.remove('wave'));
-                    });
-                }
+                };
+
+                card.addEventListener('mouseenter', triggerWave);
+                card.addEventListener('touchstart', triggerWave, { passive: true });
             });
 
-            // 3. Showcase Marquee Setup
-            const marqueeViewport = document.getElementById('marquee-viewport');
-            const totalImages = 45;
-            const images = [];
-            for (let i = 1; i <= totalImages; i++) {
-                const ext = (i === 19 || i === 22) ? 'jpg' : 'png';
-                images.push(`./assets/gallery/item_${i}.${ext}`);
-            }
-
-            function buildRow(directionClass) {
-                const row = document.createElement('div');
-                row.className = `marquee-row ${directionClass}`;
-                // Duplicate twice: [1-45][1-45]
-                const fullSet = [...images, ...images];
-                fullSet.forEach(src => {
-                    const item = document.createElement('div');
-                    item.className = 'marquee-item';
-                    item.innerHTML = `<img src="${src}" loading="lazy" alt="Project Asset">`;
-                    row.appendChild(item);
-                });
-                return row;
-            }
-
-            marqueeViewport.appendChild(buildRow('animate-left'));
-            marqueeViewport.appendChild(buildRow('animate-right'));
-
-            // Nav Scroll Effect
+            // Nav Scroll
             window.addEventListener('scroll', () => {
                 const nav = document.getElementById('main-nav');
                 if (window.scrollY > 50) nav.classList.add('scrolled');
