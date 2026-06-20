@@ -26,6 +26,271 @@
   --easing: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Section Gap Nuke & Global Alignment */
+*+section,
+section+section,
+header+section,
+section+footer {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+section {
+  padding: 0 !important;
+  /* Zero gaps as requested */
+  overflow: hidden;
+}
+
+/* Site-Wide Animated Gradient Background */
+body {
+  background: linear-gradient(225deg, #0a0010, #00050f, #0d0020);
+  background-size: 400% 400%;
+  animation: bg-gradient-shift 12s infinite alternate ease-in-out;
+  position: relative;
+}
+
+@keyframes bg-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Particle Field Overlay */
+.particles-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: particle-drift 15s linear infinite;
+}
+
+@keyframes particle-drift {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Animated Light Glow Border (Conic Halo) */
+.service-card,
+.why-choose-card,
+.contact-card,
+.feature-box {
+  position: relative;
+  background: var(--dark-950);
+  z-index: 1;
+  overflow: hidden;
+  border: none !important;
+  transition: transform 0.3s var(--easing);
+}
+
+.service-card::before,
+.why-choose-card::before,
+.contact-card::before,
+.feature-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg,
+      #a855f7,
+      #06b6d4,
+      #a855f7);
+  animation: rotate-halo 3s linear infinite;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.service-card::after,
+.why-choose-card::after,
+.contact-card::after,
+.feature-box::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: var(--dark-950);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+@keyframes rotate-halo {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Glow Pulse Shadow */
+.service-card,
+.why-choose-card,
+.contact-card,
+.feature-box {
+  animation: glow-pulse 2s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+  }
+}
+
+/* Marquee Styles */
+.marquee-row {
+  display: flex;
+  width: max-content;
+  gap: 0 !important;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  width: 250px;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: transform 0.3s ease;
+}
+
+.marquee-item:hover {
+  transform: scale(1.04);
+  z-index: 10;
+}
+
+.marquee-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.animate-left {
+  animation: scroll-left 35s linear infinite;
+}
+
+.animate-right {
+  animation: scroll-right 35s linear infinite;
+}
+
+.browser-viewport:hover .animate-left,
+.browser-viewport:hover .animate-right {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Text Word Wave Animation */
+.word-span {
+  display: inline-block;
+  transition: transform 0.3s var(--easing), color 0.3s ease;
+  will-change: transform;
+}
+
+.card-hovered .word-span {
+  animation: word-wave 0.4s ease-out;
+  color: #fff !important;
+}
+
+@keyframes word-wave {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Icon Spin & Scale */
+.service-icon,
+.feature-icon,
+.why-icon {
+  transition: transform 0.4s var(--easing) !important;
+}
+
+section:hover .service-icon,
+section:hover .feature-icon,
+section:hover .why-icon {
+  transform: rotate(20deg) scale(1.3);
+}
+
+/* Utility */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

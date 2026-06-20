@@ -338,6 +338,78 @@
     </main>
 
     <script type="module" src="./main.js"></script>
+    <script>
+        // High-Performance Vanilla JS Animation Engine (Pure JS, no libs)
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Particle Field Initialization
+            const particleContainer = document.createElement('div');
+            particleContainer.className = 'particles-overlay';
+            document.body.prepend(particleContainer);
+
+            for (let i = 0; i < 50; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDelay = Math.random() * 15 + 's';
+                p.style.opacity = Math.random() * 0.5 + 0.2;
+                particleContainer.appendChild(p);
+            }
+
+            // 2. Word Split Logic for Text Waves
+            const textContainers = document.querySelectorAll('.service-card p, .service-card h3, .feature-box p, .feature-box h3, .why-features p');
+            textContainers.forEach(container => {
+                const words = container.innerText.split(' ');
+                container.innerHTML = words.map((word, i) =>
+                    `<span class="word-span" style="animation-delay: ${i * 0.05}s">${word}</span>`
+                ).join(' ');
+
+                const card = container.closest('.service-card, .feature-box, .why-choose-card');
+                if (card) {
+                    card.addEventListener('mouseenter', () => card.classList.add('card-hovered'));
+                    card.addEventListener('mouseleave', () => card.classList.remove('card-hovered'));
+                }
+            });
+
+            // 3. Showcase Marquee Rows (Two Rows, Opposite Directions)
+            const browserViewport = document.getElementById('portfolio-browser');
+            const originalTrack = browserViewport.querySelector('.browser-track');
+            const items = Array.from(originalTrack.querySelectorAll('.browser-item'));
+
+            // Reformat items as marquee items
+            items.forEach(item => {
+                item.className = 'marquee-item';
+                item.removeAttribute('style'); // Clear floating logic variables
+            });
+
+            const mid = Math.ceil(items.length / 2);
+            const row1Items = items.slice(0, mid);
+            const row2Items = items.slice(mid);
+
+            function createRow(itemsList, directionClass) {
+                const row = document.createElement('div');
+                row.className = `marquee-row ${directionClass}`;
+                // Double items for seamless loop
+                itemsList.concat(itemsList).forEach(item => {
+                    const clone = item.cloneNode(true);
+                    row.appendChild(clone);
+                });
+                return row;
+            }
+
+            browserViewport.innerHTML = ''; // Clear viewport
+
+            if (window.innerWidth > 1024) {
+                browserViewport.appendChild(createRow(row1Items, 'animate-left'));
+                browserViewport.appendChild(createRow(row2Items, 'animate-right'));
+            } else {
+                browserViewport.appendChild(createRow(items, 'animate-left'));
+            }
+
+            // Remove old controls
+            const controls = document.querySelector('.browser-controls');
+            if (controls) controls.style.display = 'none';
+        });
+    </script>
 </body>
 
 </html>
