@@ -10,134 +10,120 @@
 </head>
 
 <body>
+    <!-- Background System -->
+    <div class="bg-system">
+        <div class="bg-mesh"></div>
+        <div class="particle-system" id="particles"></div>
+    </div>
+
     <!-- Navigation -->
     <nav id="main-nav">
         <div class="container">
             <div class="nav-inner">
                 <a href="#" class="logo">GAMEONAI</a>
                 <div class="nav-links">
-                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#services" class="nav-link">Capabilities</a>
+                    <a href="#why-choose" class="nav-link">Philosophy</a>
                     <a href="#showcase" class="nav-link">Portfolio</a>
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#proposal" class="nav-link">Inquiry</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section id="hero" style="min-height: 90vh; display: flex; align-items: center;">
+        <!-- 1. Hero Section -->
+        <section id="hero">
             <div class="container">
-                <div class="why-grid" style="align-items: center;">
+                <div class="hero-grid">
                     <div class="hero-content">
                         <span class="tagline">PRODUCTION READY STUDIO</span>
                         <h1 class="gradient-text">Crafting Future <br>Game Worlds</h1>
                         <p>High-performance Roblox development and scalable AI architectures for forward-thinking
-                            creative studios.</p>
-                        <div style="margin-top: 32px; display: flex; gap: 16px;">
-                            <a href="#contact" class="btn">Send Proposal</a>
-                            <a href="#showcase" class="btn"
-                                style="background: transparent; color: white; border: 1px solid rgba(255,255,255,0.1);">View
-                                Showcase</a>
+                            creative labs and entertainment studios.</p>
+                        <div class="hero-btns">
+                            <a href="#proposal" class="btn">Send Proposal</a>
+                            <a href="#showcase" class="btn btn-secondary">View Showcase</a>
                         </div>
                     </div>
-                    <div class="hero-image" style="text-align: right;">
-                        <img src="/assets/hero_final-CsPejBRe.jpg" alt="Grace Mascot"
-                            style="max-width: 100%; border-radius: 40px; filter: drop-shadow(0 0 50px rgba(168,85,247,0.3));">
+                    <div class="hero-visual">
+                        <!-- Redirected path per request -->
+                        <img src="/assets/hero_final-CsPejBRe.jpg" alt="Grace Mascot" id="mascot">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- 2. Capabilities Section -->
         <section id="services">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 40px;">
-                    <span class="tagline">CAPABILITIES</span>
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <span class="tagline">OUR CAPABILITIES</span>
                     <h2>Studio Engineering</h2>
                 </div>
                 <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">🎬</div>
-                        <div class="card-content">
-                            <h3>Full Production</h3>
-                            <p>End-to-end game delivery from initial blockout to global launch and live-ops management.
-                            </p>
-                        </div>
+                    <div class="card">
+                        <div class="card-icon">🎬</div>
+                        <h3>Full Production</h3>
+                        <p>End-to-end game delivery from blockout to launch and live-ops management.</p>
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon">🧪</div>
-                        <div class="card-content">
-                            <h3>Systems Architecture</h3>
-                            <p>Advanced data-oriented backend systems designed for extreme scale and low-latency
-                                networking.</p>
-                        </div>
+                    <div class="card">
+                        <div class="card-icon">🧪</div>
+                        <h3>Systems Architecture</h3>
+                        <p>Advanced data-oriented backend systems designed for extreme scale and low-latency.</p>
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon">✨</div>
-                        <div class="card-content">
-                            <h3>Advanced Animation</h3>
-                            <p>Procedural animation blending and high-fidelity rigged assets for cinematic character
-                                motion.</p>
-                        </div>
+                    <div class="card">
+                        <div class="card-icon">✨</div>
+                        <h3>Advanced Animation</h3>
+                        <p>Procedural blending and high-fidelity rigged assets for cinematic character motion.</p>
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon">🏔️</div>
-                        <div class="card-content">
-                            <h3>World Building</h3>
-                            <p>Atmospheric level design using custom PBR materials and professional lighting pipelines.
-                            </p>
-                        </div>
+                    <div class="card">
+                        <div class="card-icon">🏔️</div>
+                        <h3>World Building</h3>
+                        <p>Atmospheric level design using custom PBR materials and professional lighting pipelines.</p>
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon">🔥</div>
-                        <div class="card-content">
-                            <h3>UI/UX & VFX</h3>
-                            <p>Diegetic interfaces and optimized particle systems that maintain 60fps on all devices.
-                            </p>
-                        </div>
+                    <div class="card">
+                        <div class="card-icon">🔥</div>
+                        <h3>UI/UX & VFX</h3>
+                        <p>Diegetic interfaces and optimized particle systems maintaining 60fps on all devices.</p>
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon">📦</div>
-                        <div class="card-content">
-                            <h3>Custom Assets</h3>
-                            <p>Exclusive 3D models and tailored texture sets built specifically for the Roblox engine.
-                            </p>
-                        </div>
+                    <div class="card">
+                        <div class="card-icon">📦</div>
+                        <h3>Custom Assets</h3>
+                        <p>Exclusive 3D models and tailored texture sets built specifically for the engine.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Why Choose Us Section -->
+        <!-- 3. Why Choose GameOnAI -->
         <section id="why-choose">
             <div class="container">
                 <div class="why-grid">
                     <div class="why-text">
                         <span class="tagline">OUR PHILOSOPHY</span>
-                        <h2>Why Creative Labs <br>Choose Us</h2>
-                        <p>We blend technical mastery with an artist-first approach to ensure your project stands out in
-                            a crowded market.</p>
+                        <h2>Technical Mastery <br>Meets Vision</h2>
+                        <p>We blend deep engineering expertise with artist-first creative direction to ensure your
+                            production stands out in a crowded market.</p>
                     </div>
-                    <div class="why-features-grid"
-                        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
-                        <div class="why-choose-card">
-                            <div class="feature-icon">🚀</div>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                        <div class="card">
+                            <div class="card-icon">🚀</div>
                             <h3>High Performance</h3>
                             <p>Code optimized for maximum throughput.</p>
                         </div>
-                        <div class="why-choose-card">
-                            <div class="feature-icon">🛡️</div>
+                        <div class="card">
+                            <div class="card-icon">🛡️</div>
                             <h3>Scalable Systems</h3>
                             <p>Ready for millions of concurrent users.</p>
                         </div>
-                        <div class="why-choose-card">
-                            <div class="feature-icon">🎨</div>
+                        <div class="card">
+                            <div class="card-icon">🎨</div>
                             <h3>Artist Led</h3>
                             <p>Focused on visual and visceral impact.</p>
                         </div>
-                        <div class="why-choose-card">
-                            <div class="feature-icon">🤝</div>
+                        <div class="card">
+                            <div class="card-icon">🤝</div>
                             <h3>Reliable Partner</h3>
                             <p>Direct communication and fast delivery.</p>
                         </div>
@@ -146,52 +132,131 @@
             </div>
         </section>
 
-        <!-- Portfolio/Showcase Section -->
+        <!-- 4. Studio Showcase -->
         <section id="showcase">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <span class="tagline">PORTFOLIO</span>
-                <h2>Recent Productions</h2>
-            </div>
-            <div class="showcase-viewport" id="showcase-viewport">
-                <!-- Row 1: Left -->
-                <div class="showcase-row row-left" id="row-1"></div>
-                <!-- Row 2: Right -->
-                <div class="showcase-row row-right" id="row-2"></div>
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <span class="tagline">STUDIO PORTFOLIO</span>
+                    <h2>Production Gallery</h2>
+                </div>
+                <div class="showcase-grid" id="portfolio-grid">
+                    <!-- 45 Images will be injected here for clean maintenance -->
+                </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
+        <!-- 5. Proposal Form -->
+        <section id="proposal">
             <div class="container">
-                <div class="contact-card" style="padding: 60px; text-align: center;">
-                    <span class="tagline">GET IN TOUCH</span>
-                    <h2>Start Your Next Project 👋</h2>
-                    <p>Looking for a lead developer or studio support? Let's discuss your production needs.</p>
-                    <div style="margin-top: 40px; display: flex; gap: 32px; justify-content: center;">
-                        <a href="#" class="btn">Send Proposal</a>
-                        <div style="color: var(--gray-400);">Discord: <strong>GraceAI#0001</strong></div>
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <span class="tagline">INQUIRY</span>
+                    <h2>Start Your Project 👋</h2>
+                    <p>Tell us about your production needs and we'll get back to you within 24 hours.</p>
+                </div>
+
+                <div class="proposal-form-container">
+                    <form id="proposal-form" class="form-grid">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" placeholder="john@studio.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Discord Username</label>
+                            <input type="text" name="discord" placeholder="john_doe#1234" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Company Name (Optional)</label>
+                            <input type="text" name="company" placeholder="Creative Labs">
+                        </div>
+                        <div class="form-group">
+                            <label>Project Type</label>
+                            <select name="project_type" required>
+                                <option value="" disabled selected>Select Type</option>
+                                <option value="roblox_game">Roblox Game Development</option>
+                                <option value="roblox_ui">Roblox UI/UX</option>
+                                <option value="roblox_anim">Roblox Animation</option>
+                                <option value="3d_modeling">3D Modeling</option>
+                                <option value="game_systems">Game Systems</option>
+                                <option value="ai_dev">AI Development</option>
+                                <option value="web_dev">Website Development</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Budget Range</label>
+                            <select name="budget" required>
+                                <option value="" disabled selected>Select Budget</option>
+                                <option value="under_500">Under $500</option>
+                                <option value="500_1000">$500 - $1,000</option>
+                                <option value="1000_5000">$1,000 - $5,000</option>
+                                <option value="5000_10000">$5,000 - $10,000</option>
+                                <option value="10000_plus">$10,000+</option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <label>Timeline</label>
+                            <input type="text" name="timeline" placeholder="e.g. 2 months, urgent, etc." required>
+                        </div>
+                        <div class="form-group full">
+                            <label>Project Description</label>
+                            <textarea name="description"
+                                placeholder="Describe your project vision, key features, and requirements..."
+                                required></textarea>
+                        </div>
+                        <div class="form-group full" style="margin-top: 20px;">
+                            <button type="submit" class="btn" style="width: 100%; justify-content: center;">Send
+                                Inquiry</button>
+                        </div>
+                    </form>
+                    <div id="form-success" class="form-status success">
+                        <h3>Success!</h3>
+                        <p>Your proposal has been sent. Our team will review it and contact you on Discord/Email
+                            shortly.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- 6. Footer -->
     <footer>
         <div class="container">
+            <div class="logo" style="margin-bottom: 24px; display: inline-block;">GAMEONAI</div>
+            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 24px;">
+                <a href="#" class="nav-link">Discord</a>
+                <a href="#" class="nav-link">Twitter</a>
+                <a href="#" class="nav-link">Behance</a>
+            </div>
             <p>© 2026 GameOnAI Studio. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Performance Logic -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Showcase Marquee Setup (Hashed Image Paths)
-            const row1 = document.getElementById('row-1');
-            const row2 = document.getElementById('row-2');
-            const totalItems = 45;
+            // 1. Particle Generation
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                p.style.animationDelay = (Math.random() * 8) + 's';
+                p.style.opacity = Math.random() * 0.2 + 0.05;
+                particlesContainer.appendChild(p);
+            }
 
-            // Build the image list with specific paths and fallbacks
-            const images = [];
-            for (let i = 1; i <= totalItems; i++) {
+            // 2. Showcase Grid Population (Hashed + Local fallback)
+            const grid = document.getElementById('portfolio-grid');
+            const totalImages = 45;
+            for (let i = 1; i <= totalImages; i++) {
+                const item = document.createElement('div');
+                item.className = 'showcase-item';
+
                 let src = '';
                 if (i === 1) src = '/assets/item_1-UG3dXa6-.png';
                 else if (i === 2) src = '/assets/item_2-8nTDcb-m.png';
@@ -200,46 +265,39 @@
                     const ext = (i === 19 || i === 22) ? 'jpg' : 'png';
                     src = `./assets/gallery/item_${i}.${ext}`;
                 }
-                images.push(src);
+
+                item.innerHTML = `<img src="${src}" loading="lazy" alt="Project Asset ${i}">`;
+                grid.appendChild(item);
             }
 
-            function populateRow(container, imageList) {
-                // Duplicate twice for seamless loop
-                const items = [...imageList, ...imageList];
-                items.forEach(src => {
-                    const div = document.createElement('div');
-                    div.className = 'showcase-item';
-                    div.innerHTML = `<img src="${src}" loading="lazy" alt="Production Asset">`;
-                    container.appendChild(div);
-                });
-            }
-
-            populateRow(row1, images);
-            populateRow(row2, images);
-
-            // 2. Text Wave Logic
-            const cards = document.querySelectorAll('.service-card, .why-choose-card');
-            cards.forEach(card => {
-                const textNodes = card.querySelectorAll('h3, p');
-                textNodes.forEach(node => {
-                    const words = node.innerText.split(' ');
-                    node.innerHTML = words.map(w => `<span class="word">${w}</span>`).join(' ');
-                });
-
-                const triggerWave = () => {
-                    card.querySelectorAll('.word').forEach((word, i) => {
+            // 3. Staggered Reveal Animation
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
                         setTimeout(() => {
-                            word.classList.add('wave');
-                            setTimeout(() => word.classList.remove('wave'), 400);
-                        }, i * 50);
-                    });
-                };
+                            entry.target.classList.add('visible');
+                        }, (index % 8) * 100); // Stagger by column
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
-                card.addEventListener('mouseenter', triggerWave);
-                card.addEventListener('touchstart', triggerWave, { passive: true });
+            document.querySelectorAll('.showcase-item').forEach(item => observer.observe(item));
+
+            // 4. Form Submission Mock
+            const form = document.getElementById('proposal-form');
+            const successMsg = document.getElementById('form-success');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Simulate submission
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
             });
 
-            // Nav Scroll
+            // Nav Scroll Effect
             window.addEventListener('scroll', () => {
                 const nav = document.getElementById('main-nav');
                 if (window.scrollY > 50) nav.classList.add('scrolled');
