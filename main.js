@@ -164,51 +164,114 @@ window.addEventListener('load', () => {
     });
   }
 
-  // Staggered Grid Reveal for Showcase
-  gsap.to('.grid-item', {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    duration: 1.2,
-    stagger: {
-      each: 0.04,
-      grid: 'auto',
-      from: 'start'
-    },
-    ease: 'expo.out',
-    scrollTrigger: {
-      trigger: '#studio-grid',
-      start: 'top 85%',
-      toggleActions: 'play none none none'
-    }
-  });
+  // High-End Interactive Carousel System
+  function initShowcaseCarousel() {
+    const viewport = document.getElementById('showcase-carousel');
+    const track = viewport.querySelector('.carousel-track');
+    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
 
-  // Lightbox Logic Global
+    // Duplicate slides for seamless loop
+    slides.forEach(slide => {
+      const clone = slide.cloneNode(true);
+      track.appendChild(clone);
+    });
+
+    let totalWidth = 0;
+    const updateWidths = () => {
+      totalWidth = track.scrollWidth / 2;
+    };
+    updateWidths();
+    window.addEventListener('resize', updateWidths);
+
+    let xPos = 0;
+    let isDragging = false;
+    let velocity = 0.8; // Constant drift speed
+
+    function loop() {
+      if (!isDragging) {
+        xPos -= velocity;
+        if (xPos <= -totalWidth) xPos = 0;
+        if (xPos > 0) xPos = -totalWidth;
+        track.style.transform = `translateX(${xPos}px)`;
+      }
+      requestAnimationFrame(loop);
+    }
+    loop();
+
+    // Interaction Handlers
+    let startX, currentSwipeX;
+
+    viewport.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.pageX - xPos;
+      velocity = 0;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      currentSwipeX = e.pageX - startX;
+      xPos = currentSwipeX;
+      track.style.transform = `translateX(${xPos}px)`;
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (isDragging) {
+        isDragging = false;
+        velocity = 0.8; // Resume drift
+      }
+    });
+
+    // Touch Support
+    viewport.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      startX = e.touches[0].pageX - xPos;
+    });
+
+    viewport.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      currentSwipeX = e.touches[0].pageX - startX;
+      xPos = currentSwipeX;
+      track.style.transform = `translateX(${xPos}px)`;
+    });
+
+    viewport.addEventListener('touchend', () => {
+      isDragging = false;
+      velocity = 0.8;
+    });
+
+    // Hover Pause
+    viewport.addEventListener('mouseenter', () => velocity = 0.2);
+    viewport.addEventListener('mouseleave', () => {
+      if (!isDragging) velocity = 0.8;
+    });
+
+    // Re-bind Lightbox to slides (including clones)
+    track.querySelectorAll('.carousel-slide').forEach(item => {
+      item.addEventListener('click', () => {
+        const imgTarget = item.querySelector('img');
+        if (!imgTarget) return;
+
+        document.getElementById('modal-category').textContent = 'STUDIO SHOWCASE';
+        document.getElementById('modal-title').textContent = imgTarget.alt;
+
+        const lightboxContent = document.getElementById('lightbox-content');
+        lightboxContent.innerHTML = '';
+        const img = document.createElement('img');
+        img.src = imgTarget.src;
+        lightboxContent.appendChild(img);
+
+        document.getElementById('lightbox').classList.add('active');
+        lenis.stop();
+      });
+    });
+  }
+
+  initShowcaseCarousel();
+
+  // Lightbox Logic (Old grid binding removed)
   const lightbox = document.getElementById('lightbox');
-  const lightboxContent = document.getElementById('lightbox-content');
   const lightboxClose = document.getElementById('lightbox-close');
   const lightboxOverlay = document.querySelector('.lightbox-overlay');
-  const gridItems = document.querySelectorAll('.grid-item');
-
-  gridItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const imgTarget = item.querySelector('img');
-      if (!imgTarget) return;
-      const src = imgTarget.src;
-      const title = imgTarget.alt;
-
-      document.getElementById('modal-category').textContent = 'PROJECT SHOWCASE';
-      document.getElementById('modal-title').textContent = title;
-
-      lightboxContent.innerHTML = '';
-      const img = document.createElement('img');
-      img.src = src;
-      lightboxContent.appendChild(img);
-
-      lightbox.classList.add('active');
-      lenis.stop();
-    });
-  });
 
   function closeLightbox() {
     lightbox.classList.remove('active');

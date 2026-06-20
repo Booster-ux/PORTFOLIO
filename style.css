@@ -388,80 +388,66 @@ p {
   align-items: stretch;
 }
 
-/* Studio Showcase Grid (8-Column) */
-.showcase-grid-wrapper {
+/* Studio Showcase Carousel (Premium Swiper-like) */
+.carousel-viewport {
   width: 100%;
-  padding: 40px 0;
-}
-
-.studio-grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 16px;
-  width: 100%;
-  align-items: flex-start;
-}
-
-.grid-item {
+  overflow: hidden;
+  padding: 60px 0;
   position: relative;
-  height: auto;
-  border-radius: 12px;
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel-viewport:active {
+  cursor: grabbing;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 32px;
+  width: max-content;
+  will-change: transform;
+}
+
+.carousel-slide {
+  flex-shrink: 0;
+  height: 450px;
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--glass-border);
   background: var(--dark-900);
-  cursor: pointer;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  opacity: 0;
-  transform: translateY(40px) scale(0.92);
-  /* Starting state for stagger */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  will-change: transform, opacity;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-.grid-item:hover {
-  transform: translateY(-8px) scale(1.04);
+.carousel-slide:hover {
+  transform: scale(1.04) translateY(-10px);
   border-color: var(--indigo);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(99, 102, 241, 0.2);
-  z-index: 20;
 }
 
-.grid-item img {
-  width: 100%;
-  height: auto;
+.carousel-slide img {
+  height: 100%;
+  width: auto;
   object-fit: contain;
-  /* Ensure full visibility */
+  /* Full visibility, no crop */
   display: block;
 }
 
-/* Responsive Grid Scale */
-@media (max-width: 1200px) {
-  .studio-grid {
-    grid-template-columns: repeat(6, 1fr);
+/* Tablet Adjustments */
+@media (max-width: 1024px) {
+  .carousel-slide {
+    height: 350px;
+    gap: 24px;
   }
 }
 
-@media (max-width: 991px) {
-  .studio-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
+/* Mobile Adjustments */
 @media (max-width: 767px) {
-  .studio-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-
-  .grid-item {
-    border-radius: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .studio-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .carousel-slide {
+    height: 280px;
+    gap: 16px;
+    border-radius: 12px;
   }
 }
 
