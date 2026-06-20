@@ -41,6 +41,12 @@
         <a href="#why-choose" class="mobile-link">Philosophy</a>
         <a href="#showcase" class="mobile-link">Portfolio</a>
         <a href="#proposal" class="mobile-link">Inquiry</a>
+        <div style="margin-top: 40px; text-align: center;">
+            <p style="font-size: 0.9rem; color: var(--indigo); font-weight: 800; letter-spacing: 2px;">CONTACT</p>
+            <a href="mailto:gracegameonai@gmail.com"
+                style="color: white; text-decoration: none; font-size: 1.1rem; display: block; margin-top: 10px;">gracegameonai@gmail.com</a>
+            <p style="color: var(--gray-400); margin-top: 5px;">Discord: gameonai</p>
+        </div>
     </div>
 
     <main>
@@ -162,7 +168,13 @@
                 <div style="text-align: center; margin-bottom: 40px;">
                     <span class="tagline">INQUIRY</span>
                     <h2>Start Your Project 👋</h2>
-                    <p>Tell us about your production needs and we'll get back to you shortly.</p>
+                    <p>Tell us about your production needs. We usually respond within 24 hours.</p>
+                    <div style="margin-top: 20px; font-weight: 600;">
+                        <a href="mailto:gracegameonai@gmail.com"
+                            style="color: white; text-decoration: none;">gracegameonai@gmail.com</a>
+                        <span style="margin: 0 15px; color: var(--gray-600);">|</span>
+                        <span style="color: var(--gray-400);">Discord: gameonai</span>
+                    </div>
                 </div>
 
                 <div class="proposal-form-container">
@@ -220,6 +232,10 @@
                         <div class="form-group full" style="margin-top: 20px;">
                             <button type="submit" class="btn" style="width: 100%; justify-content: center;">Send
                                 Inquiry</button>
+                            <p style="font-size: 0.8rem; text-align: center; margin-top: 16px; color: var(--gray-600);">
+                                Or email directly at <a href="mailto:gracegameonai@gmail.com"
+                                    style="color: var(--indigo);">gracegameonai@gmail.com</a>
+                            </p>
                         </div>
                     </form>
                     <div id="form-success" class="form-status success">
@@ -282,8 +298,8 @@
                 const item = document.createElement('div');
                 item.className = 'showcase-item';
                 const ext = (i === 19 || i === 22) ? 'jpg' : 'png';
-                const src = `assets/gallery/item_${i}.${ext}`;
-                item.innerHTML = `<img src="${src}" loading="lazy" alt="Project Asset ${i}">`;
+                const src = `./assets/gallery/item_${i}.${ext}`;
+                item.innerHTML = `<img src="${src}" loading="lazy" alt="Project Asset ${i}" onerror="this.src='assets/work_1.png'; this.style.opacity='0.5';">`;
                 grid.appendChild(item);
             }
 
