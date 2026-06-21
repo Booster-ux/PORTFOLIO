@@ -511,6 +511,8 @@ p {
 
 .showcase-item {
   aspect-ratio: 16 / 11;
+  min-height: 100px;
+  /* Force dimension for observer */
   background: var(--dark-900);
   border-radius: 12px;
   overflow: hidden;
@@ -615,7 +617,7 @@ textarea {
   display: none;
 }
 
-.form-status.success {
+.form-status.active {
   display: block;
   background: rgba(34, 197, 94, 0.1);
   color: #4ade80;
@@ -711,13 +713,26 @@ textarea {
   }
 
   h1 {
-    font-size: 2.8rem;
+    font-size: clamp(2.4rem, 12vw, 3rem);
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  p,
+  h2,
+  h3,
+  .card,
+  .btn {
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .card {
-    padding: 32px;
-    aspect-ratio: 1 / 1;
-    /* Square cards for mobile */
+    padding: 24px;
+    /* Reduced padding to save space */
+    aspect-ratio: auto;
+    /* Reverting to auto to avoid squashing long text */
+    min-height: 154px;
     justify-content: center;
     text-align: center;
   }

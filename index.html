@@ -238,7 +238,7 @@
                             </p>
                         </div>
                     </form>
-                    <div id="form-success" class="form-status success">
+                    <div id="form-success" class="form-status">
                         <h3>Success!</h3>
                         <p>Your proposal has been sent. Our team will contact you on Discord (gameonai) shortly.</p>
                     </div>
@@ -251,11 +251,12 @@
     <footer>
         <div class="container">
             <div class="logo" style="margin-bottom: 24px; display: inline-block;">GAMEONAI</div>
-            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 24px;">
-                <a href="mailto:gracegameonai@gmail.com" class="nav-link">Email</a>
-                <a href="#" class="nav-link">Discord: gameonai</a>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; margin-bottom: 32px;">
+                <a href="mailto:gracegameonai@gmail.com"
+                    style="color: white; text-decoration: none; font-weight: 600;">gracegameonai@gmail.com</a>
+                <p style="color: var(--gray-400); font-weight: 500;">Discord: gameonai</p>
             </div>
-            <p>© 2026 GameOnAI Studio. All rights reserved.</p>
+            <p style="font-size: 0.9rem; color: var(--gray-600);">© 2026 GameOnAI Studio. All rights reserved.</p>
         </div>
     </footer>
 
@@ -291,7 +292,7 @@
                 particlesContainer.appendChild(p);
             }
 
-            // 3. Showcase Grid Population (Reverted to working local paths)
+            // 3. Showcase Grid Population (Failsafe Rendering)
             const grid = document.getElementById('portfolio-grid');
             const totalImages = 45;
             for (let i = 1; i <= totalImages; i++) {
@@ -299,18 +300,21 @@
                 item.className = 'showcase-item';
                 const ext = (i === 19 || i === 22) ? 'jpg' : 'png';
                 const src = `./assets/gallery/item_${i}.${ext}`;
-                item.innerHTML = `<img src="${src}" loading="lazy" alt="Project Asset ${i}" onerror="this.src='assets/work_1.png'; this.style.opacity='0.5';">`;
+
+                // Faster revealing logic
+                item.innerHTML = `<img src="${src}" loading="lazy" alt="Project Asset ${i}" 
+                    onload="this.parentElement.classList.add('visible')"
+                    onerror="this.src='./assets/work_1.png'; this.parentElement.classList.add('visible'); this.style.opacity='0.5';">`;
+
                 grid.appendChild(item);
             }
 
-            // 4. Staggered Reveal Animation
-            const observerOptions = { threshold: 0.1 };
+            // 4. Staggered Reveal Animation (Secondary observer for backup)
+            const observerOptions = { threshold: 0.05, rootMargin: '100px' };
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
+                entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.classList.add('visible');
-                        }, (index % 8) * 100);
+                        entry.target.classList.add('visible');
                         observer.unobserve(entry.target);
                     }
                 });
@@ -325,7 +329,7 @@
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
                 form.style.display = 'none';
-                successMsg.style.display = 'block';
+                successMsg.classList.add('active'); // Changed to class toggle
                 successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
             });
 
