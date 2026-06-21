@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <div class="hero-visual">
-                        <img src="assets/hero_final.jpg" alt="Grace Mascot" id="mascot">
+                        <img src="/assets/hero_final.jpg" alt="Grace Mascot" id="mascot">
                     </div>
                 </div>
             </div>
@@ -299,18 +299,33 @@
                 const item = document.createElement('div');
                 item.className = 'showcase-item';
                 const ext = (i === 19 || i === 22) ? 'jpg' : 'png';
-                const src = `assets/gallery/item_${i}.${ext}`;
+                const src = `/assets/gallery/item_${i}.${ext}`;
                 const img = document.createElement('img');
                 img.src = src;
                 img.loading = 'lazy';
                 img.alt = `Project Asset ${i}`;
                 img.onerror = function () {
-                    this.src = 'assets/work_1.png';
-                    this.style.opacity = '0.5';
+                    this.src = '/assets/work_1.png';
+                    this.parentElement.classList.add('visible'); // Show fallback immediately
                 };
                 item.appendChild(img);
                 grid.appendChild(item);
             }
+
+            // 4. Staggered Reveal Animation
+            const observerOptions = { threshold: 0.1, rootMargin: '50px' };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, (index % 6) * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.showcase-item').forEach(item => observer.observe(item));
 
             // 5. Form Submission Mock
             const form = document.getElementById('proposal-form');
