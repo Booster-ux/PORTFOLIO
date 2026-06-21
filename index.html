@@ -292,35 +292,25 @@
                 particlesContainer.appendChild(p);
             }
 
-            // 3. Showcase Grid Population (Failsafe Rendering)
+            // 3. Showcase Grid Population
             const grid = document.getElementById('portfolio-grid');
             const totalImages = 45;
             for (let i = 1; i <= totalImages; i++) {
                 const item = document.createElement('div');
                 item.className = 'showcase-item';
                 const ext = (i === 19 || i === 22) ? 'jpg' : 'png';
-                const src = `./assets/gallery/item_${i}.${ext}`;
-
-                // Faster revealing logic
-                item.innerHTML = `<img src="${src}" loading="lazy" alt="Project Asset ${i}" 
-                    onload="this.parentElement.classList.add('visible')"
-                    onerror="this.src='./assets/work_1.png'; this.parentElement.classList.add('visible'); this.style.opacity='0.5';">`;
-
+                const src = `assets/gallery/item_${i}.${ext}`;
+                const img = document.createElement('img');
+                img.src = src;
+                img.loading = 'lazy';
+                img.alt = `Project Asset ${i}`;
+                img.onerror = function () {
+                    this.src = 'assets/work_1.png';
+                    this.style.opacity = '0.5';
+                };
+                item.appendChild(img);
                 grid.appendChild(item);
             }
-
-            // 4. Staggered Reveal Animation (Secondary observer for backup)
-            const observerOptions = { threshold: 0.05, rootMargin: '100px' };
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.showcase-item').forEach(item => observer.observe(item));
 
             // 5. Form Submission Mock
             const form = document.getElementById('proposal-form');
